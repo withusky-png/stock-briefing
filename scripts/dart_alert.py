@@ -123,7 +123,7 @@ def render_alert_card(a):
 HEAD = """<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="300">
+<meta http-equiv="refresh" content="3600">
 <title>\U0001f6a8 Disclosure Alerts</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;line-height:1.6}
@@ -147,7 +147,7 @@ def render_page(new_alerts, prev_alerts_html, now_str):
     parts = [HEAD]
     parts.append("<h1>\U0001f6a8 Disclosure Alerts</h1>")
     parts.append(
-        f"<div class='sub'>마지막 체크: {now_str} · 5분마다 자동 새로고침 · 신규 {len(new_alerts)}건</div>"
+        f"<div class='sub'>마지막 체크: {now_str} · 1시간마다 자동 새로고침 · 신규 {len(new_alerts)}건</div>"
     )
     parts.append("<div class='nav'><a href='index.html'>← 일일 브리핑</a></div>")
     parts.append("<!--ALERT_START-->")
