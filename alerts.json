@@ -1,10 +1,8 @@
 {
   "seen": [],
-  "last_check": "2026-04-18 07:06 KST",
+  "last_check": "2026-04-18 07:13 KST",
   "sources_checked": [
-    "naver",
-    "dart",
-    "krx"
+    "dart"
   ],
   "sources_status": "unavailable_403"
 }
