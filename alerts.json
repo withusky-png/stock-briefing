@@ -1,8 +1,9 @@
 {
   "seen": [],
-  "last_check": "2026-04-18 07:13 KST",
+  "last_check": "2026-04-18 07:24 KST",
   "sources_checked": [
     "dart"
   ],
-  "sources_status": "unavailable_403"
+  "sources_status": "unavailable_403",
+  "corp_codes": {}
 }
