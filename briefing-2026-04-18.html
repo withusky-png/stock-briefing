@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Portfolio Briefing — 2026년 4월 18일</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 16px;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+
+    header {
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f0f6fc;
+      letter-spacing: -0.3px;
+    }
+    header .date {
+      font-size: 14px;
+      color: #8b949e;
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8b949e;
+      margin-bottom: 12px;
+    }
+
+    section { margin-bottom: 28px; }
+
+    .market-bar {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .market-item { display: flex; flex-direction: column; }
+    .market-item .label { font-size: 11px; color: #8b949e; margin-bottom: 2px; }
+    .market-item .value { font-size: 15px; font-weight: 700; color: #f0f6fc; }
+    .market-item .change { font-size: 12px; margin-top: 1px; }
+    .down-red { color: #f85149; }
+    .up-blue { color: #58a6ff; }
+    .neutral { color: #8b949e; }
+    .up-gold { color: #d29922; }
+
+    .market-note {
+      font-size: 13px;
+      color: #8b949e;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 16px; }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f0f6fc;
+    }
+    .card-ticker {
+      font-size: 12px;
+      color: #8b949e;
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .badge-blue { background: #1c2d3f; color: #58a6ff; border: 1px solid #2d5986; }
+    .badge-green { background: #1e2a1e; color: #3fb950; border: 1px solid #2d5a2d; }
+    .badge-gold { background: #2a1e0d; color: #d29922; border: 1px solid #5a3a0a; }
+
+    .news-list { list-style: none; margin-bottom: 14px; }
+    .news-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-list a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 11px;
+      margin-left: 5px;
+    }
+    .news-list a:hover { text-decoration: underline; }
+    strong { color: #f0f6fc; }
+
+    .insight {
+      background: #0d2137;
+      border-left: 3px solid #58a6ff;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #c9d1d9;
+      line-height: 1.55;
+    }
+
+    .bullet-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .bullet-list { list-style: none; }
+    .bullet-list li {
+      padding: 7px 0 7px 18px;
+      border-bottom: 1px solid #21262d;
+      font-size: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .bullet-list li:last-child { border-bottom: none; }
+    .bullet-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #58a6ff;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .risk-list li::before { color: #f85149; }
+
+    footer {
+      border-top: 1px solid #30363d;
+      padding-top: 14px;
+      font-size: 12px;
+      color: #6e7681;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Daily Portfolio Briefing</h1>
+    <div class="date">2026년 4월 18일 토요일</div>
+  </header>
+
+  <!-- 시장 요약 -->
+  <section>
+    <h2>시장 요약</h2>
+    <div class="market-bar">
+      <div class="market-item">
+        <span class="label">KOSPI</span>
+        <span class="value">6,203</span>
+        <span class="change down-red">▼ 22.76 (–0.37%)</span>
+      </div>
+      <div class="market-item">
+        <span class="label">KOSDAQ</span>
+        <span class="value">1,158</span>
+        <span class="change down-red">▼ 4.19 (–0.36%)</span>
+      </div>
+      <div class="market-item">
+        <span class="label">USD/KRW</span>
+        <span class="value">~1,420</span>
+        <span class="change up-blue">원화 강세 유지</span>
+      </div>
+      <div class="market-item">
+        <span class="label">WTI</span>
+        <span class="value">~$100</span>
+        <span class="change up-gold">고유가 지속</span>
+      </div>
+    </div>
+    <p class="market-note">미·이란 종전 기대감으로 3일 연속 급등 후 6,200선 위에서 숨 고르기. 외국인·기관 차익 실현 매도(외인 –1,984억원) vs 개인 +2,804억원 맞대응.</p>
+  </section>
+
+  <!-- 종목 브리핑 -->
+  <section>
+    <h2>종목 브리핑</h2>
+    <div class="cards">
+
+      <!-- 삼성전자 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">삼성전자</span>
+            <span class="card-ticker">005930</span>
+          </div>
+          <span class="badge badge-blue">46%</span>
+        </div>
+        <ul class="news-list">
+          <li>Q1 2026 영업이익 <strong>57.2조원</strong> (YoY +755%) — 분기 매출 133조·OP 50조 동시 돌파 한국 기업 사상 최초<a href="https://www.newsis.com/view/NISX20260413_0003589402">[뉴시스]</a></li>
+          <li>주가 216,000원, 실적 대비 저평가 논란 — KB증권 목표주가 <strong>36만원</strong>, 주요 증권사 30만원 이상 일제 제시<a href="https://v.daum.net/v/20260414060229659">[뉴시스]</a></li>
+          <li>4월 외국인 순매수 6조원 육박, 삼성전자(우선주 포함) <strong>2.3조원</strong> 쓸어담아 — 반도체주 외국인 귀환 가시화<a href="https://news.nate.com/view/20260416n03645">[네이트]</a></li>
+          <li>HBM4 양산 2026년 2월 개시 — NVIDIA Rubin 대응, 월 25만 웨이퍼(+47% YoY) 목표. NAND TLC 1-Tb 6개월 새 <strong>$4.80→$10.70</strong>(2.2배)<a href="https://markets.financialcontent.com/wral/article/tokenring-2026-1-2-the-hbm-scramble-samsung-and-sk-hynix-pivot-to-bespoke-silicon-for-the-2026-ai-supercycle">[financialcontent]</a></li>
+        </ul>
+        <div class="insight">🎯 57조 실적·HBM4 양산·NAND 슈퍼사이클 3박자 완성. 외국인 귀환 가속 중이나 주가 재평가 시차 존재 — 평단(195,238원) 대비 이미 +10.6%, 목표주가 대비 업사이드 +67% 유지.</div>
+      </div>
+
+      <!-- 태광 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">태광</span>
+            <span class="card-ticker">023160</span>
+          </div>
+          <span class="badge badge-blue">21%</span>
+        </div>
+        <ul class="news-list">
+          <li>신한증권 목표주가 <strong>50% 상향</strong> (2026.04.15) — 미국 LNG 발주·중동 재건 수요 반영<a href="https://www.ajunews.com/view/20260415085517987">[아주경제]</a></li>
+          <li>Q1 2026 추정: 수주 788억·매출 849억·OP <strong>152억원 (+105% YoY)</strong> — 피팅 수주 연간 700~800억 기조 유지</li>
+          <li>Commonwealth LNG FID 수 주 내 확정 예상, Texas LNG 57억달러 자금 조달 완료 후 FID 대기<a href="https://pgjonline.com/news/2026/april/eqt-glencore-boost-lng-deals-as-commonwealth-nears-fid">[pgjonline]</a></li>
+          <li>로켓 발사대 피팅·원전 신규 수요 매출 기여 시작 — Rio Grande·CP2·Dolphin·Port Arthur·Alaska LNG 파이프라인</li>
+        </ul>
+        <div class="insight">🎯 Q1 OP +105% 확인 후 애널리스트 목표주가 50% 상향까지 나온 구간. LNG FID 릴레이(Commonwealth→Texas→CP2)가 향후 추가 수주 공시의 핵심 트리거.</div>
+      </div>
+
+      <!-- 두산에너빌리티 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">두산에너빌리티</span>
+            <span class="card-ticker">034020</span>
+          </div>
+          <span class="badge badge-blue">28%</span>
+        </div>
+        <ul class="news-list">
+          <li>2026년 수주 전망: 원자력 <strong>5.8조</strong>·가스발전 5.3조 등 총 14.3조원 — 대신증권 목표주가 13만원 상향<a href="https://v.daum.net/v/20260225075044146">[다음]</a></li>
+          <li>창원 SMR 전용 공장 착공 — 8,068억원 투자, 2031년 연간 <strong>20기 제작</strong> CAPA 선점<a href="https://meta-news.co.kr/2026/03/24/doosan-enerbility-nuclear-power-smr-order-expansion/">[meta-news]</a></li>
+          <li>NuScale(TVA·Centrica 6GW)·X-energy·TerraPower 나트리움 SMR 기자재 수주 모멘텀 — AP1000(폴란드) 주기기 협상 진행<a href="https://buffettlab.co.kr/news/view.php?idx=51876">[버핏랩]</a></li>
+          <li>트럼프 행정부 2050년까지 원전 4배 확대 선언 — AI DC 전력 수요 2035년 176GW, 빅테크 원전 PPA 급증<a href="https://seo.goover.ai/report/202512/go-public-report-ko-f247063b-b8bf-4fd0-9c3e-f5361be8e5bd-0-0.html">[goover.ai]</a></li>
+        </ul>
+        <div class="insight">🎯 AP1000·NuScale·TerraPower 기자재 수주 공시 대기 중. SMR 공장 착공은 제조 CAPA 선점 — 수주 공시보다 제작 병목 해소가 장기 가치의 핵심 변수.</div>
+      </div>
+
+      <!-- HD현대마린엔진 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">HD현대마린엔진</span>
+            <span class="card-ticker">071970</span>
+          </div>
+          <span class="badge badge-gold">2.8%</span>
+        </div>
+        <ul class="news-list">
+          <li>대한조선 409억원 + K조선 858억원 선박엔진 수주 공시 — 납기 2028년, 백오더 확충 지속<a href="https://www.getnews.co.kr/news/articleView.html?idxno=867826">[getnews]</a></li>
+          <li>2026년 영업이익 <strong>1,400억원</strong> 전망(2025년比 2배↑), 매출 5,990억원 — "엔진 숏티지·中 수주 초호황"<a href="https://v.daum.net/v/20260401153037182">[파이낸셜뉴스]</a></li>
+          <li>2~3분기 가동률 추가 상향 계획 — LPG-DF 엔진·중국 조선소향 대형엔진·MAN-ES ME-GI/ME-GA 라이선스 수요 견조<a href="https://www.shippingnewsnet.com/news/articleView.html?idxno=69899">[쉬핑뉴스넷]</a></li>
+        </ul>
+        <div class="insight">🎯 북미 LNG FID 연쇄 확정 시 LNGC 발주 100척+ 시나리오 → DF엔진 장기 수주 가시성 최상. 소난골 LNGC 연계 수주도 체크 포인트.</div>
+      </div>
+
+      <!-- GST -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">GST</span>
+            <span class="card-ticker">083450</span>
+          </div>
+          <span class="badge badge-gold">1.5%</span>
+        </div>
+        <ul class="news-list">
+          <li>Q1 2026 스크러버 수출 YoY <strong>+139%</strong> — 삼성 테일러 팩토리 납품·마이크론 투자 확대 직접 수혜<a href="https://www.bondweb.co.kr/_research/downloadPage.asp?number=895182&gn=1">[bondweb]</a></li>
+          <li>역대 최고 실적 달성 전망 — TSMC·마이크론·YMTC 해외 고객 다변화, 차세대 이머전 쿨링 장비 수주 시작</li>
+          <li>NDR(기업설명회) 이후 리레이팅 진행 중 — 저평가 매력 부각, 소형주 내 모멘텀 유효</li>
+        </ul>
+        <div class="insight">🎯 Q1 +139%는 연간 가이던스 대폭 상회 가능성 시사. 삼성 테일러 2단계 + SK하이닉스 미국 팹 가동 시 추가 스크러버·칠러 수주 파이프라인 풍부.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 오늘의 관전 포인트 -->
+  <section>
+    <h2>오늘의 관전 포인트</h2>
+    <div class="bullet-card">
+      <ul class="bullet-list">
+        <li>Commonwealth LNG FID 공식 발표 타이밍 — 확정 시 태광(피팅)·HD현대마린엔진(DF엔진) 동시 수혜</li>
+        <li>삼성전자 외국인 순매수 연속성 — 6조 귀환 기조 이어지면 주가 재평가 본격화 여부</li>
+        <li>두산에너빌리티 AP1000·SMR 기자재 수주 공시 — TerraPower·NuScale 계약 발표 시점</li>
+        <li>NAND TLC 1-Tb 주간 고시 가격 — $10.7 안착 확인 시 삼성 메모리 마진 추가 개선 신호</li>
+        <li>HD현대마린엔진 2Q 가동률·신규 수주 공시 속도 — 초호황 지속 여부 및 백오더 잔량</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 리스크 플래시 -->
+  <section>
+    <h2>리스크 플래시</h2>
+    <div class="bullet-card">
+      <ul class="bullet-list risk-list">
+        <li>미·이란 협상 결렬 → 유가 급등 재연(WTI $110+) 시 LNG FID 일정 지연 가능성</li>
+        <li>삼성 HBM4 수율 회복 지연 — SK하이닉스와 점유율 격차(28% vs 50%) 심화 리스크</li>
+        <li>KOSPI 6,200선 외국인 차익 실현 가속 — 2분기 실적 확인 전 지수 횡보 시 포트 드래그</li>
+        <li>中 조선소 엔진 내재화 가속 — HD현대마린엔진 중국 수주 의존도 중기 리스크 상존</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Generated at 2026-04-18 09:00 KST &nbsp;·&nbsp;
+    <a href="https://withusky-png.github.io/stock-briefing/" style="color:#58a6ff; text-decoration:none;">withusky-png.github.io/stock-briefing</a>
+  </footer>
+
+</div>
+</body>
+</html>
