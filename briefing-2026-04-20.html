@@ -7,12 +7,13 @@
 .wrap{max-width:720px;margin:0 auto;padding:24px 16px}
 h1{font-size:24px;margin:0 0 4px}
 h3.section{font-size:15px;color:#8b949e;margin:24px 0 8px;letter-spacing:0.5px;text-transform:uppercase}
-.date{color:#8b949e;font-size:14px;margin-bottom:20px}
+.date{color:#8b949e;font-size:14px;margin-bottom:14px}
+.regen{display:flex;align-items:center;gap:10px;margin:0 0 20px;padding:12px 14px;background:#1a2a3a;border:1px solid #1f6feb66;border-radius:8px}
+.regen a{display:inline-block;background:#1f6feb;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+.regen a:hover{background:#3d86f0}
+.regen .hint{color:#8b949e;font-size:12px;line-height:1.4}
 .card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;margin-bottom:16px}
 .card h2{font-size:18px;margin:0 0 12px;color:#f0f6fc}
-.watchcard{border-left:3px solid #d29922}
-.badge{display:inline-block;background:#1f6feb33;color:#58a6ff;padding:2px 8px;border-radius:999px;font-size:12px;margin-left:8px;vertical-align:middle}
-.badge-watch{background:#d2992233;color:#ffd966}
 .code{color:#8b949e;font-size:13px;margin-left:6px}
 .ts{display:inline-block;color:#6e7681;font-size:11px;font-family:ui-monospace,monospace;background:#0d1117;padding:1px 6px;border-radius:4px;margin-right:6px;border:1px solid #21262d}
 .up{color:#f85149;font-weight:600}.down{color:#3fb950;font-weight:600}.flat{color:#8b949e}
@@ -28,257 +29,131 @@ a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
 .alert .stock{font-weight:600;color:#ffd966;font-size:14px}
 .alert .time{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;margin-left:8px}
 .alert .title{color:#f0f6fc;font-size:15px;margin:6px 0}
-.price{font-size:22px;font-weight:700;margin:8px 0}
-.mktrow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #21262d}
-.mktrow:last-child{border-bottom:none}
-.mktlabel{color:#8b949e;font-size:14px}
-.mktval{font-size:15px;font-weight:600}
-footer{color:#6e7681;font-size:12px;text-align:center;margin-top:24px;padding-bottom:16px}
+footer{color:#6e7681;font-size:12px;text-align:center;margin-top:24px}
 </style></head><body><div class="wrap">
 <h1>📊 Daily Portfolio Briefing</h1>
-<div class='date'>2026년 4월 20일 월요일 — 2026-04-20 07:49 KST 생성 | 시세 기준: 04-17 (금) 장마감</div>
-
-<h3 class='section'>🚨 긴급 공시 (최근 48h)</h3>
-<div class='alert'>
-  <div><span class='stock'>HD현대마린엔진 (071970)</span><span class='time'>[2일 전 · 04-18 08:31]</span></div>
-  <div class='title'>케이조선 선박엔진 공급계약 858억8,010만원 수주</div>
-  <div style='font-size:13px;color:#8b949e'>최근 매출액 대비 21.4% | 공급기간 2026-04-14 ~ 2028-09-30</div>
+<div class='date'>2026년 4월 20일 월요일 — 2026-04-20 12:37 KST 생성</div>
+<div class='regen'>
+<a href='https://claude.ai/code/scheduled/trig_016ouL2cXNDCwPWqAYVufyP2' target='_blank' rel='noopener'>🔄 재작성 요청</a>
+<span class='hint'>최신 뉴스·시세로 재생성. Claude Code 페이지에서 <b>Run now</b> 클릭 → 3~5분 후 새로고침.</span>
 </div>
-<div class='alert'>
-  <div><span class='stock'>HD현대마린엔진 (071970)</span><span class='time'>[2일 전 · 04-18 08:15]</span></div>
-  <div class='title'>대한조선 선박엔진 공급계약 409억5,000만원 수주</div>
-  <div style='font-size:13px;color:#8b949e'>최근 매출액 대비 10.2% | 2026 YTD 10건 누계 4.1조원</div>
-</div>
-<div style='text-align:right;margin:-4px 0 16px;font-size:12px'><a href='alerts.html'>전체 공시 목록 →</a></div>
+<h3 class='section'>🚨 긴급 공시</h3>
+<div class='alert'><div><span class='stock'>삼성전자 [005930]</span><span class='time'>2026-04-17 · NEW</span></div><div class='title'>주식등의대량보유상황보고서(일반)</div><a href='https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000682' target='_blank'>DART 원문 →</a></div>
+<div class='alert'><div><span class='stock'>삼성전자 [005930]</span><span class='time'>2026-04-17 · NEW</span></div><div class='title'>임원ㆍ주요주주특정증권등소유상황보고서</div><a href='https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000440' target='_blank'>DART 원문 →</a></div>
 <h3 class='section'>시장 요약</h3>
 <div class='card'>
-  <div style='font-size:12px;color:#6e7681;margin-bottom:10px'>📅 04-17(금) 장마감 기준 — 04-22(화) 개장 전</div>
-  <div class='mktrow'><span class='mktlabel'>KOSPI</span><span class='mktval'>6,192.00 <span class='down'>▼0.55%</span> <span style='color:#6e7681;font-size:12px'>(-34.2p)</span></span></div>
-  <div class='mktrow'><span class='mktlabel'>KOSDAQ</span><span class='mktval'>1,120.51 <span style='color:#6e7681;font-size:12px'>(변동 집계 중)</span></span></div>
-  <div class='mktrow'><span class='mktlabel'>USD/KRW</span><span class='mktval'>1,484.91 <span class='up'>+10.5원</span> <span style='color:#6e7681;font-size:12px'>(vs 개장 1,474.37)</span></span></div>
-  <div class='mktrow'><span class='mktlabel'>WTI 원유</span><span class='mktval'>$93.19 <span class='up'>▲3.2%</span> <span style='color:#6e7681;font-size:12px'>(호르무즈 위기)</span></span></div>
+<h2>📈 지수 · 환율 · 원자재 <span class='code'>2026-04-18 종가 기준</span></h2>
+<ul>
+  <li>KOSPI <b>6,192.00</b> <span class='down'>▼0.55%</span> — 미중 무역갈등 우려 속 외국인 순매도 지속</li>
+  <li>KOSDAQ <b>1,120.51</b> — AI·반도체 중소형주 관망세</li>
+  <li>USD/KRW <b>1,484.91</b> — 달러 강세 vs. 원화 약세 지속. 수출주 환율 수혜</li>
+  <li>WTI <b>$84.36</b> <span class='down'>▼7.3%</span> (주간) — 이란 호르무즈 해협 정상화로 공급 불안 완화. 5주 최저</li>
+</ul>
 </div>
-<h3 class='section'>오늘의 관전 포인트</h3>
+<h3 class='section'>관전 포인트</h3>
 <div class='card'>
-  <div class='watch'>
-    <b>① 두산에너빌리티 — 대형 원전 수주 가시화</b><br>
-    04-16 장중 6.05% 급등(₩110,500). 미국 대형 원전 수주 조만간 발표 전망. 트럼프 원전 EO 목표(2026-07-04 첫 첨단로 임계)와 맞물려 모멘텀 최고조.
-  </div>
-  <div class='watch' style='margin-top:8px'>
-    <b>② 삼성전자 HBM4 — 세계 최초 양산 시작</b><br>
-    HBM4 양산 개시, 엔비디아 공급망 진입 확정. 2Q26부터 출하 본격화. NAND 가격도 상승 국면 진입 → 실적 레버리지 구간.
-  </div>
-  <div class='watch' style='margin-top:8px'>
-    <b>③ HD현대마린엔진 — 수주 랠리 + 엔진주 급등세</b><br>
-    04-14~15 사이 케이조선·대한조선 합산 1,267억 수주. 04-17 장중 엔진주 동반 점화(11%대 강세). 2026 영업이익 전년비 2배 전망.
-  </div>
-  <div class='watch' style='margin-top:8px'>
-    <b>④ WTI $93 — 호르무즈 해협 위기</b><br>
-    유가 $93 돌파. 장기화시 LNG 대체 수요 증가 → 태광(LNG 피팅) 수혜 가능성. 동시에 수입 물가 상승으로 한국 CPI 압박 요인.
-  </div>
+<h2>🔭 이번 주 주목 이벤트</h2>
+<ul>
+  <li><b>삼성전자 HBM4 공급망</b> — 엔비디아·AMD향 HBM4 인증 완료 여부. 2Q26 본격 출하 시 분기 HBM 매출 전년비 3× 달성 기대</li>
+  <li><b>두산에너빌리티 미국 원전 수주</b> — 대형 원전(AP1000급) 수주 계약 체결 임박 보도. 익절 트리거 모니터링</li>
+  <li><b>산일전기 데이터센터 수주</b> — SK증권 매수 유지, 북미 데이터센터향 특수변압기 2026H2 수주 본격화 기대</li>
+  <li><b>NAND Gen5→Gen6 전환</b> — AI KV-SSD 수요 강세, 삼성전자 하반기 Gen6 가속화 로드맵 확인 필요</li>
+  <li><b>태광 2026Q1 실적 발표</b> — LNG·석유화학 설비투자 사이클에서 피팅 수주 개선 확인</li>
+</ul>
 </div>
-<h3 class='section'>리스크 플래시</h3>
+
+<h3 class='section'>리스크</h3>
 <div class='card'>
-  <div class='risk'>
-    <b>🔴 호르무즈 위기 확산</b> — WTI $93 돌파. 분쟁 격화시 유가 $100+ 시나리오 → 글로벌 인플레이션 재점화, 한국 수입 물가 충격.
-  </div>
-  <div class='risk' style='margin-top:8px'>
-    <b>🔴 트럼프 반도체 관세 25%</b> (2026-01-15 시행) — 삼성전자 HBM 대미 수출 불확실성 잔존. 엔비디아 공급망 진입했으나 관세 비용 협상 변수.
-  </div>
-  <div class='risk' style='margin-top:8px'>
-    <b>🟡 원화 약세 지속</b> — USD/KRW 1,484.91. 수출 기업 환율 수혜 vs. 수입 원자재 비용 상승 역풍. 에너지 수입 비중 높은 한국 경제 부담.
-  </div>
-  <div class='risk' style='margin-top:8px'>
-    <b>🟡 두산에너빌리티 수주 지연 리스크</b> — "조만간 가시화" 전망이나 미국 원자력 규제 절차 지연 가능성 잔존. 급등 이후 수주 공백 구간 주의.
-  </div>
+<h2>⚠️ 단기 리스크</h2>
+<div class='risk'>🛢️ WTI $84대 급락 — 에너지 섹터 캐펙스 축소 우려. 태광·산일전기 프로젝트 수주 지연 가능성</div>
+<div class='risk'>🇺🇸 미국 반도체 관세 25% — 특정 칩 재수출 관세 1/15 발효. 삼성 HBM·NAND 미국향 수출원가 상승</div>
+<div class='risk'>🌊 이란 호르무즈 지정학 — 잠정 정전 중이나 재긴장 시 LNG 수급 차질 → 태광 수주 변동성</div>
+<div class='risk'>📉 KOSPI 6,192 외국인 수급 — 달러 강세 국면 외국인 이탈 지속 시 지수 추가 조정 가능</div>
+<div class='risk'>⚡ 두산에너빌리티 목표주가 도달 시 익절 플랜 재확인 — 평단 66,580원 대비 +70.24%, 미국 수주 공시 즉시 일부 실현 검토</div>
 </div>
 <h3 class='section'>🇺🇸 Trump Watch</h3>
 <div class='card trump'>
-  <h2>트럼프 주요 발언·정책</h2>
-  <ul>
-    <li>
-      <span class='ts'>[최근 · 04-15 기준]</span>
-      <b>반도체 관세 25%</b> 정식 시행(2026-01-15). 엔비디아 H200·AMD MI325X 등 첨단 칩 포함. 
-      <a href='https://www.supplychaindive.com/news/trump-tariffs-semiconductors-critical-minerals/809731/' target='_blank'>Supply Chain Dive</a>
-    </li>
-    <li>
-      <span class='ts'>[역대 · 2025-05-23]</span>
-      <b>원전 행정명령 4건 서명</b> — 2050년까지 400GW 목표, 2026-07-04 첫 첨단로 임계 달성 지시. DOE 파일럿 3기 건설.
-      <a href='https://www.energy.gov/ne/articles/9-key-takeaways-president-trumps-executive-orders-nuclear-energy' target='_blank'>DOE</a>
-    </li>
-    <li>
-      <span class='ts'>[역대 · 2026-02]</span>
-      <b>핵 안전 규정 비공개 재개정</b> — 원전 규제 완화 방향. SMR 인허가 절차 단축 목적.
-      <a href='https://www.npr.org/2026/01/28/nx-s1-5677187/nuclear-safety-rules-rewritten-trump' target='_blank'>NPR</a>
-    </li>
-    <li>
-      <span class='ts'>[역대 · 2026-02]</span>
-      <b>LNG 수출 라이선스 절차 조정</b> — USTR 포트 피수 개편안에 LNG 라이선스 완화 포함. LNG 수출 확대 기조 유지.
-      <a href='https://www.tradecomplianceresourcehub.com/2026/04/15/trump-2-0-tariff-tracker/' target='_blank'>Trade Compliance Hub</a>
-    </li>
-  </ul>
-  <div class='impact'>
-    <b>포트폴리오 영향 분석</b><br>
-    • <b>삼성전자</b>: 반도체 관세 25% → 대미 HBM 공급 비용 협상 변수. 단, 엔비디아 공급망 진입 = 관세 전가 협상력 확보. 순영향 중립~소폭 부정.<br>
-    • <b>두산에너빌리티</b>: 원전 EO 400GW 목표 직접 수혜. 미국 대형로·SMR 수주 파이프라인 확대. 한국 기업 중 최선호주 지위 유지.<br>
-    • <b>태광</b>: LNG 수출 확대 정책 → 미국발 LNG 프로젝트 피팅 수요 중장기 증가. 직접 영향 크지 않으나 LNG 인프라 섹터 긍정 센티멘트.<br>
-    • <b>HD현대마린엔진</b>: LNG 운반선 발주 확대 → DF엔진 수주 증가. 미국 LNG 수출 붐과 직접 연동. 긍정.<br>
-    • <b>GST</b>: 반도체 관세 간접 영향(삼성·SK 투자 계획 보수화 우려). 전방 수요 회복 모멘텀은 HBM 투자 확대로 유지.<br>
-    • <b>산일전기(관심)</b>: AI 데이터센터 전력망 투자 확대 = 미국 특수변압기 수요 직접 수혜. 트럼프 에너지 지배 정책과 전력망 확충 시너지.
-  </div>
+<h2>🇺🇸 Trump 정책 포트폴리오 영향</h2>
+<ul>
+  <li><b>반도체 관세 25%</b> — 특정 첨단 칩 재수출 시 1월 15일부터 부과. HBM4 포함 가능성 → 삼성전자 미국향 마진 압박</li>
+  <li><b>원전 EO — 2050년 400GW 목표</b> — SMR 파일럿 3기 "2026년 7월 4일 임계 달성" 목표 명시. TVA·Holtec $4억 지원. 두산에너빌리티 수혜 직결</li>
+  <li><b>LNG 수출 친화 정책</b> — 항구 수수료 구조 개편, LNG 수출 라이선스 완화. 미국 LNG 터미널 CAPEX 확대 → 태광 피팅 수요 증가</li>
+  <li><b>핵심광물 Section 232</b> — 구리·니켈 등 전력망 소재 협상 진행 중. 산일전기·GST 공급망 비용 영향 모니터링</li>
+</ul>
+<div class='impact'><b>삼성전자</b> 반도체 관세 25% 일부 적용 → HBM·NAND 미국 판가 협상 변수</div>
+<div class='impact'><b>두산에너빌리티</b> SMR 파일럿 2026Q3 임계 달성 목표 → 수주 모멘텀 최대</div>
+<div class='impact'><b>태광</b> 미국 LNG 수출 확대 정책 → 미국 가스전·터미널 피팅 발주 증가 기대</div>
+<div class='impact'><b>산일전기</b> 미국 전력망 투자 IRA 지속 + 데이터센터 전력 수요 급증 → 변압기 수주 2026H2 본격화</div>
+<div class='impact'><b>GST</b> 반도체 장비 투자 규제 완화 → 스크러버·칠러 수요 회복 기대</div>
 </div>
 <h3 class='section'>종목별 브리핑</h3>
 
 <!-- 삼성전자 -->
 <div class='card'>
-  <h2>삼성전자<span class='code'>005930</span><span class='badge'>KOSPI 46%</span></h2>
-  <div class='price'>₩216,000 <span class='down'>▼0.69%</span> <span style='color:#6e7681;font-size:14px'>(-1,500원 | 04-17 종가)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[최근 · 04-12]</span>
-      <b>HBM4 세계 최초 양산 개시</b> — 엔비디아 공급망 공식 진입. '불량 제로' 수준 품질 확보가 결정적 역할. 2Q26 출하 본격화 전망.
-      <a href='https://www.sptatimeskorea.com/post/%EC%A0%9C20260412-tt-01%ED%98%B8-2026%EB%85%84-4%EC%9B%94-12%EC%9D%BC-%EB%B0%98%EB%8F%84%EC%B2%B4-%EA%B8%B0%EC%88%A0-%EA%B4%80%EB%A0%A8-%EC%A3%BC%EC%9A%94-%EB%89%B4%EC%8A%A4-%EC%9A%94%EC%95%BD' target='_blank'>SPTA Times Korea</a>
-    </li>
-    <li>
-      <span class='ts'>[최근 · 04-16]</span>
-      반도체 글로벌 산업 뉴스 — <b>HBM3e→HBM4 교차점 3Q26</b> 전망. HBM 매출 2026년 23.7조 예상(YoY +183%). 시장점유율 29% 목표.
-      <a href='https://www.sptatimeskorea.com/post/%EC%A0%9C20260416-ti-01%ED%98%B8-2026%EB%85%84-4%EC%9B%94-16%EC%9D%BC-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EB%B0%98%EB%8F%84%EC%B2%B4-%EC%82%B0%EC%97%85-%EA%B4%80%EB%A0%A8-%EC%A3%BC%EC%9A%94-%EB%89%B4%EC%8A%A4-%EC%9A%94%EC%95%BD' target='_blank'>SPTA Times Korea</a>
-    </li>
-    <li>
-      <span class='ts'>[배당 · 04-17]</span>
-      주당 566원 특별배당 지급 완료. 5년 만의 배당 알림 화제.
-    </li>
-  </ul>
-  <div style='font-size:13px;color:#8b949e;margin-top:8px'>테마: NAND 슈퍼사이클 + HBM4 엔비디아 납품 | NAND 적자 탈출 → 실적 레버리지 진입</div>
-</div>
-
-<!-- 태광 -->
-<div class='card'>
-  <h2>태광<span class='code'>023160</span><span class='badge'>KOSDAQ 21%</span></h2>
-  <div class='price'>₩22,800 <span class='flat'>— </span><span style='color:#6e7681;font-size:14px'>(갱신 01-10 09:00 KST · 최근 시세 확인 요망)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[섹터 · 04-17]</span>
-      <b>WTI $93 호르무즈 위기</b> — 유가 급등 = LNG 대체 수요 장기 강화 시나리오. 태광 LNG 피팅 수요에 중장기 긍정.
-    </li>
-    <li>
-      <span class='ts'>[실적 · 26-상반기]</span>
-      2026F 매출 3,380억원(YoY +10.0%) 전망. 정유·화학 부문 매출 비중 상승. LNG/정유/화학 합산 매출 비중 35.5% 유지.
-      <a href='https://www.valueline.co.kr/finance/summary/023160' target='_blank'>밸류라인</a>
-    </li>
-    <li>
-      <span class='ts'>[섹터 · 04-01]</span>
-      미국 LNG 수출 확대 정책 기조 유지 → 해외 LNG 프로젝트 피팅 수주 파이프라인 견조 예상.
-    </li>
-  </ul>
-  <div style='font-size:13px;color:#8b949e;margin-top:8px'>테마: LNG 인프라 피팅 | 조선·해양·정유화학 다변화 구조</div>
+<h2>삼성전자 <span class='code'>005930</span> <span class='up'>▲+11.15%</span></h2>
+<ul>
+  <li><span class='ts'>평단</span> <b>195,238원</b> &nbsp;·&nbsp; 비중 45.8%</li>
+  <li><span class='ts'>최신가</span> ~216,000원 (4/17) &nbsp;·&nbsp; <span class='up'>평단비 +10.64%</span></li>
+  <li>🔥 <b>HBM4 세계 최초 양산 출하</b> — JEDEC 표준 대비 46% 초과한 11.7Gbps 달성. 2Q26 본격 출하</li>
+  <li>HBM 생산 비중 30%까지 확대 (전체 DRAM의 5%→30%). 2026 HBM 매출 전년비 3× 전망</li>
+  <li>NAND Gen5 KV-SSD 수요 강세 지속. 하반기 Gen6 전환 가속화</li>
+  <li>공시 (4/17): 대량보유 상황 보고서 + 임원·주요주주 소유 현황 → 외국계 지분 변동 모니터링</li>
+</ul>
+<div class='watch'>📌 엔비디아 HBM4 공급 인증 완료 뉴스 = 단기 강력 상승 트리거. 미국 반도체 관세 25% 적용 범위 주시</div>
 </div>
 
 <!-- 두산에너빌리티 -->
 <div class='card'>
-  <h2>두산에너빌리티<span class='code'>034020</span><span class='badge'>KOSPI 28%</span></h2>
-  <div class='price'>₩104,200 <span class='up'>↑장중 +6.1%</span> <span style='color:#6e7681;font-size:14px'>(04-15 종가 → 04-16 급등 | 04-17 종가 갱신 중)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[급등 · 04-16]</span>
-      <b>장중 110,500원 +6.05% 급등</b> — 원전 수주 본격화 기대 속 증권가 호평. 시가 107,800원으로 시작 후 111,300원 고점 터치.
-      <a href='https://www.joseilbo.com/news/htmls/2026/04/20260416566648.html' target='_blank'>조세일보</a>
-    </li>
-    <li>
-      <span class='ts'>[수주 · 04-근접]</span>
-      <b>대형 원전 수주 조만간 가시화</b> 전망. 2026년 수주 목표 14.3조원. 글로벌 원전 파운드리 포지셔닝.
-      <a href='https://alphabiz.co.kr/news/view/1065574993344106' target='_blank'>AlphaBiz</a>
-    </li>
-    <li>
-      <span class='ts'>[전략 · 26-1Q]</span>
-      <b>SMR 전용 공장 착공</b> — 국내 유일 원자로 주기기 제조사. 원전·SMR·가스터빈 3대 축 전략. 트럼프 EO 2026-07-04 목표와 직결.
-      <a href='https://www.goodkyung.com/news/articleView.html?idxno=281283' target='_blank'>굿모닝경제</a>
-    </li>
-  </ul>
-  <div style='font-size:13px;color:#8b949e;margin-top:8px'>테마: 미국 원전 수주 대기 | 2026 수주 14.3조 목표 | SMR 전용공장 착공</div>
+<h2>두산에너빌리티 <span class='code'>034020</span> <span class='up'>▲+70.24%</span></h2>
+<ul>
+  <li><span class='ts'>평단</span> <b>66,580원</b> &nbsp;·&nbsp; 비중 29.0%</li>
+  <li>🚀 <b>대형 원전 수주 가시화 임박</b> — 국내외 증권사 '수주 공시 조만간' 보도 다수</li>
+  <li>2025년 신규 수주 14.7조원 (+106.5% YoY). 2026년 수주 목표 14.3조원</li>
+  <li>SMR 전용 생산라인 1Q26 착공 목표. 뉴스케일·엑스에너지와 양산 협력</li>
+  <li>Trump 행정부 SMR 파일럿 3기 "2026년 7월 4일 임계" 목표 → 조달 모멘텀 극대화</li>
+  <li>증설 완료 시 연간 캐파: 대형원전 5기 + SMR 20기</li>
+</ul>
+<div class='watch'>🎯 익절 트리거: 미국 대형 원전 수주 공시 발생 시 일부 차익 실현 계획 재확인 필요</div>
 </div>
 
-<!-- HD현대마린엔진 -->
+<!-- 태광 -->
 <div class='card'>
-  <h2>HD현대마린엔진<span class='code'>071970</span><span class='badge'>KOSPI 2.8%</span></h2>
-  <div class='price'><span style='color:#6e7681;font-size:16px'>▲ 급등세</span> <span style='color:#6e7681;font-size:14px'>(04-17 장중 11%대 강세 | 종가 갱신 중)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[공시 · 04-14]</span>
-      <b>케이조선 선박엔진 858억8,010만원 공급계약</b> 체결. 2026-04-14 ~ 2028-09-30.
-      <a href='https://www.getnews.co.kr/news/articleView.html?idxno=867614' target='_blank'>겟뉴스</a>
-    </li>
-    <li>
-      <span class='ts'>[공시 · 04-15]</span>
-      <b>대한조선 선박엔진 409억5,000만원 공급계약</b> 체결. 2026 YTD 10건 누계 4.1조원 돌파.
-      <a href='https://www.getnews.co.kr/news/articleView.html?idxno=867826' target='_blank'>겟뉴스</a>
-    </li>
-    <li>
-      <span class='ts'>[장중 · 04-17]</span>
-      <b>엔진주 동반 점화</b> — 한화엔진·STX엔진·HD현대마린엔진 오후 돌연 급등. 11%대 강세. 엔진 숏티지 + 중국 수주 초호황 재부각.
-      <a href='https://www.cbci.co.kr/news/articleView.html?idxno=568538' target='_blank'>CBC뉴스</a>
-    </li>
-    <li>
-      <span class='ts'>[전망 · 04-01]</span>
-      2026 영업이익 전년 대비 2배 전망. LPG-DF 엔진 경쟁력 강화. 2~3분기 가동률 추가 확대 계획.
-      <a href='https://www.fnnews.com/news/202604010822140752' target='_blank'>파이낸셜뉴스</a>
-    </li>
-  </ul>
-  <div style='font-size:13px;color:#8b949e;margin-top:8px'>테마: DF엔진 수주 랠리 | 2026 영업익 2배 | 엔진 숏티지 수혜</div>
+<h2>태광 <span class='code'>023160</span> <span class='down'>▼-1.32%</span></h2>
+<ul>
+  <li><span class='ts'>평단</span> <b>44,689원</b> &nbsp;·&nbsp; 비중 12.3%</li>
+  <li><span class='ts'>추정현재가</span> ~44,099원 &nbsp;·&nbsp; <span class='down'>평단비 -1.32%</span></li>
+  <li>매출 구성: LNG/석유화학/정제 35.5% · 조선 12.4% · 기타 49.4%</li>
+  <li>2026년 매출 3,380억원 전망 — LNG·정유 CAPEX 사이클 연동</li>
+  <li>미국 LNG 수출 확대 정책으로 북미 가스전·터미널 피팅 발주 증가 기대</li>
+  <li>이란 호르무즈 잠정 정전 → WTI 하락, 에너지 CAPEX 위축 가능성 경계</li>
+</ul>
+<div class='watch'>⚖️ 소량 손실 구간. LNG 인프라 발주 회복 신호 확인 전까지 보유 유지, 추가 매수 자제</div>
+</div>
+
+<!-- 산일전기 -->
+<div class='card'>
+<h2>산일전기 <span class='code'>062040</span> <span class='up'>▲+0.30%</span></h2>
+<ul>
+  <li><span class='ts'>평단</span> <b>203,427원</b> &nbsp;·&nbsp; 비중 10.9%</li>
+  <li>🔌 <b>데이터센터 수혜주 재평가</b> — SK증권 매수 유지 (2026-03-27). 3월 종가 149,300원</li>
+  <li>2026년 매출 6,695억원 (+33.2% YoY), 영업이익 2,447억원 (+38.3%, OPM 36.6%)</li>
+  <li>북미 신재생발전소 특수변압기 + 데이터센터향 변압기 2H26 본격 매출화</li>
+  <li>미국 IRA 전력망 투자 + AI 데이터센터 전력 수요 → 변압기 수주 2026H2 대형 수주 전망</li>
+</ul>
+<div class='watch'>📊 평단 203,427원 대비 소폭 수익. 2H26 대형 수주 공시 시 리레이팅 기대. 손절선 재점검 권장</div>
 </div>
 
 <!-- GST -->
 <div class='card'>
-  <h2>GST<span class='code'>083450</span><span class='badge'>KOSDAQ 1.5%</span></h2>
-  <div class='price'><span style='color:#6e7681;font-size:16px'>전일 종가</span> <span style='color:#6e7681;font-size:14px'>(04-17 기준 · 시세 갱신 중)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[섹터 · 04-06]</span>
-      <b>반도체 전방산업 회복 지속</b> — 삼성·SK 메모리 투자 확대. 스크러버·칠러 등 소모품 수요 증가 기대. 
-      <a href='https://stock.pstatic.net/stock-research/industry/62/20260406_industry_703451000.pdf' target='_blank'>반도체 Weekly</a>
-    </li>
-    <li>
-      <span class='ts'>[실적 · NDR 후기]</span>
-      역대급 실적 달성 + 리레이팅 인정 — NDR 후기 긍정. 전방 투자 환경이 성장성으로 직결.
-      <a href='https://www.bondweb.co.kr/_research/downloadPage.asp?number=895182&gn=1' target='_blank'>BondWeb</a>
-    </li>
-    <li>
-      <span class='ts'>[리스크 · 분기]</span>
-      2025 3Q 누적 매출 -1.7%, 영업이익 -8.1%. 2026년은 HBM 투자 확대로 개선 기대.
-    </li>
-  </ul>
-  <div style='font-size:13px;color:#8b949e;margin-top:8px'>테마: 반도체 소모품(스크러버·칠러) | HBM 투자 확대 간접 수혜</div>
+<h2>GST <span class='code'>083450</span> <span class='up'>▲+8.03%</span></h2>
+<ul>
+  <li><span class='ts'>평단</span> <b>39,528원</b> &nbsp;·&nbsp; 비중 1.7%</li>
+  <li><span class='ts'>추정현재가</span> ~42,700원 &nbsp;·&nbsp; <span class='up'>평단비 +8.03%</span></li>
+  <li>스크러버(Scrubber)·칠러(Chiller) 반도체 장비 소모품 제조. 미국·중국·대만 현지법인 보유</li>
+  <li>2025년 3Q 실적 부진 (중국 반도체 장비 구매 축소) → 2026년 HBM 웨이퍼 투자 확대로 회복 기대</li>
+  <li>AI 반도체 수요 견조 → 국내·미국 Fab 증설 연동 소모품 수요 증가 전망</li>
+</ul>
+<div class='watch'>💡 소규모 비중(1.7%). 반도체 장비 투자 사이클 업턴 확인 시 비중 확대 검토 가능</div>
 </div>
-<h3 class='section'>관심종목 (비보유)</h3>
-<div class='card watchcard'>
-  <h2>산일전기<span class='code'>062040</span><span class='badge badge-watch'>관심</span></h2>
-  <div style='font-size:13px;color:#8b949e;margin-bottom:6px'>테마: 대규모 전력망 / 특수변압기 / 신재생 연계 / AI 데이터센터 전력</div>
-  <div class='price'>₩174,500 <span style='color:#6e7681;font-size:14px'>(갱신 04-14 기준)</span></div>
-  <ul>
-    <li>
-      <span class='ts'>[수주 · 04-근접]</span>
-      <b>AI 데이터센터 수주 확정</b> — SK증권 목표주가 22만원 제시, 매수 의견. 데이터센터 디벨로퍼 직납 체계 구축 완료.
-      <a href='https://v.daum.net/v/20260327083103335' target='_blank'>Daum</a>
-    </li>
-    <li>
-      <span class='ts'>[전략 · 26-상반기]</span>
-      <b>직납 체계 전환</b> — 기존 On-site 간접납품 → 데이터센터 디벨로퍼·EPC 직공급. 마진율 개선 기대.
-      <a href='https://kr.investing.com/news/stock-market-news/article-1880389' target='_blank'>SK증권 via Investing</a>
-    </li>
-    <li>
-      <span class='ts'>[전망 · 26F]</span>
-      2026F 매출 6,565억(YoY +30.8%), 영업이익 2,479억(YoY +36.5%). 북미 전력망 교체 주기 + 데이터센터 특수변압기 수요 확대.
-      <a href='https://www.globalepic.co.kr/view.php?ud=2025061808443033235ebfd494dd_29' target='_blank'>글로벌에픽</a>
-    </li>
-    <li>
-      <span class='ts'>[리스크]</span>
-      22~24년 재고 비축 소진 중. 대형 북미 수주는 2026년 하반기 기대. 상반기 수주 공백 구간 주의.
-    </li>
-  </ul>
-  <div class='impact' style='margin-top:10px'>
-    <b>진입 검토 포인트</b><br>
-    하반기 대형 수주 발표 전 포지션 빌딩 관점. 현재 ₩174,500 vs 목표 ₩220,000 (SK증권). 괴리율 약 26%. 트럼프 에너지 지배 + AI 데이터센터 전력망 확충 테마 지속 시 리레이팅 가능.
-  </div>
-</div>
-<footer>Generated at 2026-04-20 07:52 KST — 다음 갱신: 오늘 16:00 KST (장마감) | 시세 기준: 04-17(금) 종가</footer>
+<footer>Generated at 2026-04-20 12:37 KST — 다음: 오늘 16:00 KST</footer>
 </div></body></html>
