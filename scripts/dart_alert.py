@@ -224,7 +224,17 @@ def main():
     elif os.path.exists("alerts.html"):
         with open("alerts.html") as f:
             body = f.read()
-        body = re.sub(r"마지막 체크:[^·]*·", f"마지막 체크: {now_str} ·", body, count=1)
+        body = re.sub(
+            r"마지막 체크:[^<]*건</div>",
+            f"마지막 체크: {now_str} · 1시간마다 자동 새로고침 · 신규 0건</div>",
+            body, count=1,
+        )
+        src_label = "dart.fss.or.kr" if source == "dart" else "finance.naver.com" if source == "naver" else "N/A"
+        body = re.sub(
+            r"<footer>Generated at[^<]*</footer>",
+            f"<footer>Generated at {now_str} — Source: {src_label}</footer>",
+            body, count=1,
+        )
         with open("alerts.html", "w") as f:
             f.write(body)
     else:
