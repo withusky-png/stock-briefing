@@ -200,12 +200,35 @@ def render_page(new_alerts, prev_alerts_html, now_str, source):
 
 
 def extract_prev_alerts():
+    """이전 alerts.html에서 ALERT 구간을 추출하되, 오늘 기준 2일 이내의 카드만 유지."""
     if not os.path.exists("alerts.html"):
         return ""
     with open("alerts.html") as f:
         body = f.read()
     m = re.search(r"<!--ALERT_START-->(.*?)<!--ALERT_END-->", body, re.S)
-    return m.group(1).strip() if m else ""
+    if not m:
+        return ""
+    inner = m.group(1).strip()
+    if not inner:
+        return ""
+
+    today = datetime.datetime.now(KST).date()
+    cutoff = today - datetime.timedelta(days=2)  # 오늘 포함 최근 3일 (오늘/어제/그제)
+
+    # 각 카드는 `<div class='alert'>...</a></div>` 형태.
+    cards = re.findall(r"<div class='alert'>.*?</a>\s*</div>", inner, re.S)
+    kept = []
+    for c in cards:
+        m_dt = re.search(r"(\d{4}-\d{2}-\d{2})", c)
+        if not m_dt:
+            continue
+        try:
+            d = datetime.date.fromisoformat(m_dt.group(1))
+        except ValueError:
+            continue
+        if d >= cutoff:
+            kept.append(c)
+    return "\n".join(kept)
 
 
 def main():
