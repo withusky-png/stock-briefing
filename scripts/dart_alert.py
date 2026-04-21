@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """DART 긴급 공시 알림 — dart.fss.or.kr HTML 스크래핑 (OpenDart API 불가 대비)."""
+import datetime
+import hashlib
+import html
 import json
 import os
 import re
-import datetime
-import html
-import urllib.request
 import urllib.parse
+import urllib.request
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
@@ -101,7 +102,12 @@ def scrape_naver(name, code, seen):
         ttl = html.unescape(re.sub(r"<[^>]+>", "", ttl)).strip()
         date = re.sub(r"<[^>]+>", "", date).strip()
         fid = re.search(r"(\d{8,})", href)
-        uid = fid.group(1) if fid else f"{code}_{ttl[:20]}"
+        if fid:
+            uid = fid.group(1)
+        else:
+            # stable source id가 없으면 (code, href, date, 전체 title) 해시로 충돌 방지.
+            payload = f"{code}|{href}|{date}|{ttl}".encode("utf-8", "replace")
+            uid = "n_" + hashlib.sha1(payload).hexdigest()[:16]
         if uid in seen:
             continue
         new.append({
@@ -144,13 +150,35 @@ def fetch_disclosures(seen):
     return new, source_used or "none"
 
 
+ALLOWED_URL_HOSTS = {"dart.fss.or.kr", "finance.naver.com"}
+
+
+def safe_url(u):
+    """외부 링크 화이트리스트: 허용된 host의 https만 허용. 그 외는 '#'."""
+    try:
+        p = urllib.parse.urlparse(u)
+    except Exception:
+        return "#"
+    if p.scheme != "https":
+        return "#"
+    if p.hostname not in ALLOWED_URL_HOSTS:
+        return "#"
+    return u
+
+
 def render_alert_card(a):
+    # 모든 스크래핑 필드는 html.escape 로 이스케이프하여 stored XSS 방지.
+    name = html.escape(a.get("name", ""))
+    code = html.escape(a.get("stock_code", ""))
+    date = html.escape(a.get("date", ""))
+    title = html.escape(a.get("title", ""))
+    url = html.escape(safe_url(a.get("url", "")), quote=True)
     return (
         f"<div class='alert'>"
-        f"<div><span class='stock'>{a['name']} [{a['stock_code']}]</span>"
-        f"<span class='time'>{a['date']} · NEW</span></div>"
-        f"<div class='title'>{a['title']}</div>"
-        f"<a href='{a['url']}' target='_blank'>원문 →</a>"
+        f"<div><span class='stock'>{name} [{code}]</span>"
+        f"<span class='time'>{date} · NEW</span></div>"
+        f"<div class='title'>{title}</div>"
+        f"<a href='{url}' target='_blank' rel='noopener noreferrer'>원문 →</a>"
         f"</div>"
     )
 
@@ -239,31 +267,12 @@ def main():
     now = datetime.datetime.now(KST)
     now_str = now.strftime("%Y-%m-%d %H:%M KST")
 
-    if new:
-        prev = extract_prev_alerts()
-        page = render_page(new, prev, now_str, source)
-        with open("alerts.html", "w") as f:
-            f.write(page)
-    elif os.path.exists("alerts.html"):
-        with open("alerts.html") as f:
-            body = f.read()
-        body = re.sub(
-            r"마지막 체크:[^<]*건</div>",
-            f"마지막 체크: {now_str} · 1시간마다 자동 새로고침 · 신규 0건</div>",
-            body, count=1,
-        )
-        src_label = "dart.fss.or.kr" if source == "dart" else "finance.naver.com" if source == "naver" else "N/A"
-        body = re.sub(
-            r"<footer>Generated at[^<]*</footer>",
-            f"<footer>Generated at {now_str} — Source: {src_label}</footer>",
-            body, count=1,
-        )
-        with open("alerts.html", "w") as f:
-            f.write(body)
-    else:
-        page = render_page([], "", now_str, source)
-        with open("alerts.html", "w") as f:
-            f.write(page)
+    # 매 실행마다 이전 alerts.html 의 카드를 2일 윈도우로 재필터하고,
+    # 신규 여부와 무관하게 페이지를 재작성한다. (neen/0 실행에서도 오래된 카드 제거 보장)
+    prev = extract_prev_alerts()
+    page = render_page(new, prev, now_str, source)
+    with open("alerts.html", "w") as f:
+        f.write(page)
 
     state["seen"] = list(set(list(seen) + [a["id"] for a in new]))[-500:]
     state["last_check"] = now_str
