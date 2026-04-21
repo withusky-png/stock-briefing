@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
-"""DART 긴급 공시 알림 — 공식 XML API 기반."""
+"""DART 긴급 공시 알림 — dart.fss.or.kr HTML 스크래핑 (OpenDart API 불가 대비)."""
 import json
 import os
 import re
 import datetime
+import html
 import urllib.request
-import xml.etree.ElementTree as ET
+import urllib.parse
 
-KEY = os.environ["DART_KEY"]
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
-# stock_code → corp_code 매핑은 최초 1회만 fetch, 이후 alerts.json에 캐시
 WATCH = [
     ("005930", "삼성전자"),
     ("023160", "태광"),
     ("034020", "두산에너빌리티"),
-    ("062040", "산일전기"),
+    ("071970", "HD현대마린엔진"),
     ("083450", "GST"),
 ]
+
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0"
 
 
 def load_state():
@@ -32,81 +33,115 @@ def save_state(state):
         json.dump(state, f, indent=2, ensure_ascii=False)
 
 
-def fetch_corp_codes(state):
-    """stock_code → corp_code 매핑 확보 (캐시)."""
-    cache = state.get("corp_codes", {})
-    need = [s for s, _ in WATCH if s not in cache]
-    if not need:
-        return cache
+# ── Step 2A: dart.fss.or.kr POST 스크래핑 ──────────────────────────────────
 
-    import zipfile
-    import io
+def scrape_dart(name, code, bgn, end, seen):
+    params = {
+        "currentPage": "1", "maxResults": "15", "maxLinks": "10",
+        "sort": "date", "series": "desc",
+        "textCrpCik": "", "textCrpNm": name, "textPresenterNm": "",
+        "finalReport": "recent", "startDate": bgn, "endDate": end,
+        "publicType": "", "publicType1": "", "publicType2": "", "publicType3": "",
+        "publicType4": "", "publicType5": "", "publicType6": "", "publicType7": "",
+        "publicType8": "", "publicType9": "", "publicType10": "", "publicType11": "",
+        "publicType12": "", "publicType13": "",
+        "reportName": "", "reportNamePopYn": "N",
+        "examinObj": "", "relationWith": "", "relationPopYn": "N",
+        "textCorporationType": "",
+    }
+    data = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(
+        "https://dart.fss.or.kr/dsac001/search.ax", data=data,
+        headers={"User-Agent": UA, "Referer": "https://dart.fss.or.kr/dsac001/mainAll.do"},
+    )
+    with urllib.request.urlopen(req, timeout=15) as r:
+        body = r.read().decode("utf-8", "replace")
 
-    url = f"https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key={KEY}"
-    with urllib.request.urlopen(url, timeout=30) as r:
-        zbytes = r.read()
-    with zipfile.ZipFile(io.BytesIO(zbytes)) as z:
-        with z.open("CORPCODE.xml") as f:
-            tree = ET.parse(f)
-    for c in tree.getroot().findall("list"):
-        stock = (c.findtext("stock_code") or "").strip()
-        corp = (c.findtext("corp_code") or "").strip()
-        name = (c.findtext("corp_name") or "").strip()
-        if stock in need:
-            cache[stock] = {"corp_code": corp, "name": name}
-    state["corp_codes"] = cache
-    return cache
-
-
-def fetch_disclosures(corp_codes, seen):
-    """최근 2일 공시 중 미확인 건만 반환."""
-    today = datetime.datetime.now(KST)
-    bgn = (today - datetime.timedelta(days=2)).strftime("%Y%m%d")
-    end = today.strftime("%Y%m%d")
+    rows = re.findall(r"<tr[^>]*>.*?</tr>", body, re.S)
     new = []
-    for stock_code, info in corp_codes.items():
-        url = (
-            f"https://opendart.fss.or.kr/api/list.xml"
-            f"?crtfc_key={KEY}&corp_code={info['corp_code']}"
-            f"&bgn_de={bgn}&end_de={end}&page_count=20"
-        )
-        try:
-            with urllib.request.urlopen(url, timeout=20) as r:
-                body = r.read().decode("utf-8", "replace")
-        except Exception as e:
-            print(f"[WARN] {info['name']} fetch fail: {e}")
+    for row in rows:
+        m_id = re.search(r"rcpNo=(\d+)", row)
+        if not m_id:
             continue
-        try:
-            root = ET.fromstring(body)
-        except ET.ParseError as e:
-            print(f"[WARN] {info['name']} parse fail: {e}")
+        rcpt = m_id.group(1)
+        m_ttl = re.search(r'<a[^>]*id="r_\d+"[^>]*>(.*?)</a>', row, re.S)
+        if not m_ttl:
+            m_ttl = re.search(r"rcpNo=\d+[^>]*>(.*?)</a>", row, re.S)
+        title = re.sub(r"<[^>]+>", "", m_ttl.group(1)).strip() if m_ttl else "(제목 파싱 실패)"
+        title = html.unescape(title)
+        m_dt = re.search(r"(\d{4}\.\d{2}\.\d{2})", row)
+        date = m_dt.group(1).replace(".", "-") if m_dt else ""
+        if name not in row:
             continue
-        status = root.findtext("status")
-        if status != "000":
-            msg = root.findtext("message", "no data")
-            print(f"[INFO] {info['name']}: {status} - {msg}")
+        if rcpt in seen:
             continue
-        count = 0
-        for item in root.findall("list"):
-            rcept_no = (item.findtext("rcept_no") or "").strip()
-            if not rcept_no or rcept_no in seen:
-                continue
-            title = (item.findtext("report_nm") or "").strip()
-            date = (item.findtext("rcept_dt") or "").strip()
-            date_disp = f"{date[:4]}-{date[4:6]}-{date[6:8]}" if len(date) == 8 else date
-            new.append(
-                {
-                    "id": rcept_no,
-                    "stock_code": stock_code,
-                    "name": info["name"],
-                    "title": title,
-                    "date": date_disp,
-                    "url": f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={rcept_no}",
-                }
-            )
-            count += 1
-        print(f"{info['name']}: +{count} new")
+        new.append({
+            "id": rcpt, "stock_code": code, "name": name,
+            "title": title, "date": date,
+            "url": f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={rcpt}",
+        })
     return new
+
+
+# ── Step 2B: finance.naver.com 폴백 ─────────────────────────────────────────
+
+def scrape_naver(name, code, seen):
+    url = f"https://finance.naver.com/item/news_notice.naver?code={code}"
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=15) as r:
+        body = r.read().decode("euc-kr", "replace")
+
+    new = []
+    for m in re.finditer(
+        r'<td[^>]*class="title"[^>]*>.*?<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>'
+        r'.*?<td[^>]*class="date"[^>]*>(.*?)</td>',
+        body, re.S
+    ):
+        href, ttl, date = m.groups()
+        ttl = html.unescape(re.sub(r"<[^>]+>", "", ttl)).strip()
+        date = re.sub(r"<[^>]+>", "", date).strip()
+        fid = re.search(r"(\d{8,})", href)
+        uid = fid.group(1) if fid else f"{code}_{ttl[:20]}"
+        if uid in seen:
+            continue
+        new.append({
+            "id": uid, "stock_code": code, "name": name,
+            "title": ttl, "date": date,
+            "url": "https://finance.naver.com" + href if href.startswith("/") else href,
+        })
+    return new
+
+
+# ── 공통 로직 ────────────────────────────────────────────────────────────────
+
+def fetch_disclosures(seen):
+    now = datetime.datetime.now(KST)
+    bgn = (now - datetime.timedelta(days=2)).strftime("%Y.%m.%d")
+    end = now.strftime("%Y.%m.%d")
+    new = []
+    source_used = None
+
+    for code, name in WATCH:
+        # 2A 시도
+        try:
+            items = scrape_dart(name, code, bgn, end, seen)
+            print(f"{name}: +{len(items)} new (dart)")
+            new.extend(items)
+            if source_used is None:
+                source_used = "dart"
+        except Exception as e:
+            print(f"[WARN] {name} dart fail: {e}, trying naver...")
+            # 2B 폴백
+            try:
+                items = scrape_naver(name, code, seen)
+                print(f"{name}: +{len(items)} new (naver fallback)")
+                new.extend(items)
+                if source_used is None:
+                    source_used = "naver"
+            except Exception as e2:
+                print(f"[WARN] {name} naver fail: {e2}")
+
+    return new, source_used or "none"
 
 
 def render_alert_card(a):
@@ -115,7 +150,7 @@ def render_alert_card(a):
         f"<div><span class='stock'>{a['name']} [{a['stock_code']}]</span>"
         f"<span class='time'>{a['date']} · NEW</span></div>"
         f"<div class='title'>{a['title']}</div>"
-        f"<a href='{a['url']}' target='_blank'>DART 원문 →</a>"
+        f"<a href='{a['url']}' target='_blank'>원문 →</a>"
         f"</div>"
     )
 
@@ -143,7 +178,7 @@ footer{color:#6e7681;font-size:11px;text-align:center;margin-top:24px}
 """
 
 
-def render_page(new_alerts, prev_alerts_html, now_str):
+def render_page(new_alerts, prev_alerts_html, now_str, source):
     parts = [HEAD]
     parts.append("<h1>\U0001f6a8 Disclosure Alerts</h1>")
     parts.append(
@@ -156,9 +191,10 @@ def render_page(new_alerts, prev_alerts_html, now_str):
     if prev_alerts_html:
         parts.append(prev_alerts_html)
     parts.append("<!--ALERT_END-->")
-    if not new_alerts and not prev_alerts_html.strip():
+    if not new_alerts and not (prev_alerts_html or "").strip():
         parts.append("<div class='empty'>최근 2일 내 신규 공시 없음</div>")
-    parts.append(f"<footer>Generated at {now_str} — Source: DART OpenAPI</footer>")
+    src_label = "dart.fss.or.kr" if source == "dart" else "finance.naver.com" if source == "naver" else "N/A"
+    parts.append(f"<footer>Generated at {now_str} — Source: {src_label}</footer>")
     parts.append("</div></body></html>")
     return "\n".join(parts)
 
@@ -175,35 +211,33 @@ def extract_prev_alerts():
 def main():
     state = load_state()
     seen = set(state.get("seen", []))
-    corp_codes = fetch_corp_codes(state)
-    new = fetch_disclosures(corp_codes, seen)
+
+    new, source = fetch_disclosures(seen)
     now = datetime.datetime.now(KST)
     now_str = now.strftime("%Y-%m-%d %H:%M KST")
 
     if new:
         prev = extract_prev_alerts()
-        html = render_page(new, prev, now_str)
+        page = render_page(new, prev, now_str, source)
         with open("alerts.html", "w") as f:
-            f.write(html)
+            f.write(page)
     elif os.path.exists("alerts.html"):
-        # 타임스탬프만 갱신
         with open("alerts.html") as f:
             body = f.read()
         body = re.sub(r"마지막 체크:[^·]*·", f"마지막 체크: {now_str} ·", body, count=1)
         with open("alerts.html", "w") as f:
             f.write(body)
     else:
-        # 첫 실행 + 공시 없음
-        html = render_page([], "", now_str)
+        page = render_page([], "", now_str, source)
         with open("alerts.html", "w") as f:
-            f.write(html)
+            f.write(page)
 
-    # state 업데이트
     state["seen"] = list(set(list(seen) + [a["id"] for a in new]))[-500:]
     state["last_check"] = now_str
     state["last_new_count"] = len(new)
+    state["sources_checked"] = ["dart", "naver_fallback"]
     save_state(state)
-    print(f"DONE: {len(new)} new, {len(seen)} seen")
+    print(f"DONE: {len(new)} new | source={source}")
 
 
 if __name__ == "__main__":
