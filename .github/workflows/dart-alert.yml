@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 * * * *'   # 매시 정각 UTC = 매시 09분 전 KST 체크
   workflow_dispatch:       # 수동 실행 가능
+  push:
+    paths:
+      - '.trigger'         # 더미 파일 push로 즉시 실행
 
 permissions:
   contents: write
