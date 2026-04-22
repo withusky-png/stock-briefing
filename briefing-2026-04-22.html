@@ -17,6 +17,7 @@ a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
 .stat .val{font-size:17px;font-weight:700;font-family:ui-monospace,SFMono-Regular,monospace;color:#f0f6fc}
 .stat .val.up{color:#f85149}.stat .val.down{color:#3fb950}
 .stat .sub{color:#8b949e;font-size:11px;margin-top:1px;font-family:ui-monospace,monospace}
+.stat .sub.up{color:#f85149}.stat .sub.down{color:#3fb950}
 .alloc .bar{display:flex;height:10px;border-radius:6px;overflow:hidden;border:1px solid #30363d}
 .alloc .seg{transition:opacity .15s}.alloc .seg:hover{opacity:0.8}
 .alloc .legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:8px;font-size:11px;color:#8b949e}
@@ -84,28 +85,42 @@ ul{margin:6px 0;padding-left:19px}li{margin:5px 0;font-size:14px}
 footer{color:#6e7681;font-size:11px;text-align:center;margin-top:28px;padding-top:16px;border-top:1px solid #21262d}
 footer a{color:#8b949e;margin:0 8px}
 footer .sign{color:#a371f7;font-size:12px;margin-bottom:6px;display:block}
-.badge-ath{display:inline-block;background:#f85149;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:0.5px;vertical-align:middle;margin-left:6px}
 </style></head><body><div class="wrap">
 
-<!-- HERO -->
-<div class="hero" id="top">
-  <h1>🐶 멍뭉이의 아침 브리핑 <span class="badge-ath">KOSPI ATH</span></h1>
-  <div class="date">2026년 4월 22일 수요일 · 업데이트: 2026-04-22 09:30 KST</div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <h1>🐶 멍뭉이의 오늘 브리핑</h1>
+  <div class="date">2026년 4월 22일 (수) · 장마감 기준 15:34 KST</div>
   <div class="stats">
     <div class="stat">
-      <div class="lbl">포트폴리오</div>
-      <div class="val">₩156.5M</div>
-      <div class="sub up">+₩27.0M (+20.96%)</div>
+      <div class="lbl">총평가액</div>
+      <div class="val">₩156.6M</div>
+      <div class="sub">포트폴리오 5종목</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">총손익</div>
+      <div class="val up">+₩27.1M</div>
+      <div class="sub up">+21.04%</div>
     </div>
     <div class="stat">
       <div class="lbl">KOSPI</div>
-      <div class="val up">6,388.47</div>
-      <div class="sub up">▲ +169.38p (+2.72%)</div>
+      <div class="val up">6,417.93</div>
+      <div class="sub up">▲ +29.46p (+0.46%)</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">KOSDAQ</div>
+      <div class="val up">1,181.12</div>
+      <div class="sub up">▲ +2.09p (+0.18%)</div>
     </div>
     <div class="stat">
       <div class="lbl">USD/KRW</div>
-      <div class="val">1,484.91</div>
-      <div class="sub flat">WTI $89.46 ▲2.3%</div>
+      <div class="val down">1,486.00</div>
+      <div class="sub">원화 약세 (중동 리스크)</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">WTI</div>
+      <div class="val up">$92.13</div>
+      <div class="sub up">▲ 미-이란 협상 결렬</div>
     </div>
   </div>
   <div class="alloc">
@@ -117,254 +132,392 @@ footer .sign{color:#a371f7;font-size:12px;margin-bottom:6px;display:block}
       <div class="seg c-gst" style="width:1.7%" title="GST 1.7%"></div>
     </div>
     <div class="legend">
-      <span><i class="c-samsung"></i>삼성전자 45.7%</span>
-      <span><i class="c-doosan"></i>두산에너빌리티 29.2%</span>
+      <span><i class="c-samsung"></i>삼성 45.7%</span>
+      <span><i class="c-doosan"></i>두산 29.2%</span>
       <span><i class="c-taegwang"></i>태광 12.3%</span>
-      <span><i class="c-sanil"></i>산일전기 11.1%</span>
+      <span><i class="c-sanil"></i>산일 11.1%</span>
       <span><i class="c-gst"></i>GST 1.7%</span>
     </div>
   </div>
-</div>
+</section>
 
-<!-- 멍뭉이 인사 카드 -->
-<div class="pup-intro" id="intro">
+<!-- ===== 멍뭉이 인사 카드 ===== -->
+<div class="pup-intro" id="greeting">
   <div class="face">🐶</div>
   <div class="msg">
-    주인님, 안녕하세요! 멍뭉이가 아침 일찍 시장 구석구석 물어왔어요! 🐾<br><br>
-    오늘 <b>KOSPI가 6,388포인트로 역대 신고가</b>를 찍었어요! 한국 수출이 4월 상반기에만 +49.4% 폭발하고 반도체가 +180% 뛰었거든요! 삼성이도 신바람 났어요! 멍멍!<br><br>
-    그리고 <b>두산이 자사주 매입을 완료</b>했다는 공시가 나왔어요! 스스로 주식 사들이는 건 자신감의 표현이에요! 꼬리 살랑살랑~<br><br>
-    트럼프 아저씨 원전 명령서로 <b>SMR 3기를 7월 4일까지 임계 달성</b> 목표를 세웠는데, 두산이한테 이보다 좋은 뉴스가 없어요! 오늘도 주인님 응원해요! 멍!
+    주인님! 멍뭉이가 오늘도 시장 구석구석 열심히 물어왔어요! 멍멍! 🐾<br><br>
+    오늘 엄청 신난 소식 세 가지예요! <b>KOSPI가 역대 처음으로 6,400을 돌파</b>했대요 — 진짜 역사적인 날이에요! 그리고 <b>삼성이가 1분기 영업이익 57조원으로 깜짝 어닝서프라이즈</b>를 냈는데, 컨센서스(37조원)를 무려 35%나 상회했다니 와, 멍뭉이 꼬리가 저절로 흔들려요! 🐾 마지막으로 <b>두산이가 52주 신고가를 경신</b>했어요! 유진투자증권이 오늘 처음으로 커버리지를 시작하면서 목표가 15만원을 제시했거든요. 1단계 익절가(13.5만원)가 한 발짝 가까워지고 있어서 꼬리 살랑살랑~<br><br>
+    다만 아쉽게도 삼성이 주가는 오늘 살짝 빠졌어요(-0.68%) — "소문에 사서 뉴스에 팔라"는 격언처럼 실적이 이미 선반영됐나봐요. 중동 긴장이 계속되면서 원화도 달러당 1,486원까지 내려앉은 것도 주의가 필요해요. 하지만 전체적으로 <b>오늘은 기분 좋은 날</b>이에요! 멍!
   </div>
 </div>
 
-<!-- Chip Nav -->
-<div class="chips">
-  <a href="#top">🏠 홈</a>
+<!-- ===== CHIP NAV ===== -->
+<nav class="chips" id="nav">
+  <a href="#greeting">🐶 인사</a>
   <a href="#alerts">🚨 공시</a>
   <a href="#market">📈 시장</a>
-  <a href="#watch">👁️ 관전</a>
-  <a href="#risk">⚠️ 리스크</a>
+  <a href="#watchpoints">👁️ 관전</a>
+  <a href="#risks">⚠️ 리스크</a>
   <a href="#trump">🇺🇸 Trump</a>
-  <a href="#samsung">삼성이</a>
-  <a href="#doosan">두산이</a>
-  <a href="#taegwang">태광이</a>
-  <a href="#sanil">산일이</a>
+  <a href="#samsung">삼성전자</a>
+  <a href="#doosan">두산에너빌리티</a>
+  <a href="#taegwang">태광</a>
+  <a href="#sanil">산일전기</a>
   <a href="#gst">GST</a>
-</div>
+</nav>
 
-<!-- 재작성 버튼 -->
+<!-- ===== 재작성 버튼 ===== -->
 <div class="regen">
-  <a href="https://claude.ai/code" target="_blank">🔄 멍뭉이 다시 물어오기</a>
-  <span class="hint">최신 시장 데이터로 브리핑을 새로 생성해요.<br>다음 산책: 오늘 16:00 KST (장마감 브리핑)</span>
+  <a href="https://withusky-png.github.io/stock-briefing/" onclick="return false;">🔄 멍뭉이 다시 물어오기</a>
+  <div class="hint">마지막 업데이트: 2026-04-22 15:34 KST · 다음 산책: 오늘 16:00 KST</div>
 </div>
 
-<!-- 공시 섹션 -->
+<!-- ===== 🚨 긴급 공시 ===== -->
 <h3 class="section" id="alerts">🚨 긴급 공시 <span class="count">2</span></h3>
 
 <div class="alert warn">
   <div class="head">
     <span class="stock">두산에너빌리티 [034020]</span>
-    <span class="badge warn">자사주</span>
     <span class="time">2026-04-20</span>
+    <span class="badge">자사주</span>
   </div>
   <div class="title">자기주식취득결과보고서</div>
-  <div class="pup-note">🐶 두산이가 자사주 매입을 완료했어요! 회사 스스로 "우리 주식 가치 있다!"고 증명한 거예요! 주주 가치 높이려는 따뜻한 행동이에요! 꼬리 살랑살랑 🐾</div>
+  <div class="pup-note">🐾 두산이의 자사주 매입 프로그램이 완료됐대요! 매입 기간 중엔 수급 지지가 됐지만, 이제 그 효과가 사라질 수 있으니 멍뭉이가 눈여겨볼게요.</div>
   <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260420000329" target="_blank">DART 원문 →</a>
 </div>
 
 <div class="alert info">
   <div class="head">
     <span class="stock">두산에너빌리티 [034020]</span>
-    <span class="badge info">임원공시</span>
     <span class="time">2026-04-20</span>
+    <span class="badge">내부자</span>
   </div>
-  <div class="title">임원·주요주주특정증권등소유상황보고서</div>
-  <div class="pup-note">🐶 임원분들이 주식 보유 현황을 신고했어요! 내부자들이 두산이 주식을 꽉 잡고 있다는 뜻이니 멍뭉이는 안심이에요! 멍!</div>
+  <div class="title">임원ㆍ주요주주특정증권등소유상황보고서</div>
+  <div class="pup-note">🐾 임원분이 주식 보유 현황을 공시했어요! 내부자 동향 체크 — 대량 매도 신호 없으면 OK예요. 멍!</div>
   <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260420000509" target="_blank">DART 원문 →</a>
 </div>
 
-<!-- 시장 요약 -->
+<!-- ===== 📈 시장 요약 ===== -->
 <h3 class="section" id="market">📈 시장 요약</h3>
 <div class="card">
-  <h2>오늘의 증시 한눈에</h2>
+  <h2>오늘의 시장 흐름</h2>
   <ul>
-    <li>🐶 <span class="up">KOSPI 6,388.47 ▲+2.72%</span> — 멍뭉이가 밤새 물어온 소식 중 제일 기뻐요! 역대 <b>신고가</b>를 터뜨렸어요! 한국 4월 상반기 수출 +49.4%, 반도체 수출 +180%에 외국인이 폭풍 매수로 몰려왔거든요! 멍멍!</li>
-    <li>🐶 <span class="flat">KOSDAQ ~1,206</span> — 코스닥도 대형 반도체 부품 종목 중심으로 흥겨운 하루예요!</li>
-    <li>🐶 <span class="flat">USD/KRW 1,484.91</span> — 달러가 소폭 강세 (범위 1,470~1,488)예요. 수출 기업엔 약간 보너스가 붙는 환경이에요!</li>
-    <li>🐶 <span class="up">WTI $89.46 ▲+2.3%</span> — 중동 긴장이 완화되는 기대가 있는데도 WTI가 올랐어요. 호르무즈 해협 상선 공격으로 톤-마일이 늘었기 때문이에요!</li>
-    <li>🐶 한국 조선 빅3가 올해 2조 원 이익을 향해 달리고 있어요! LNG 신조선 수주 115척, 전년 대비 +24% 예상이에요! 꼬리 살랑살랑!</li>
+    <li>🐶 <span class="up">KOSPI 6,417.93 (+0.46%)</span> — 주인님! KOSPI가 역대 처음으로 6,400선을 돌파했어요! G20 국가 중 4월 수익률 1위래요. 외국인이 대형 반도체주를 쓸어 담은 덕분이에요.</li>
+    <li>🐶 <span class="up">KOSDAQ 1,181.12 (+0.18%)</span> — 코스닥도 조용하게 우상향. 중소형 성장주도 무리 없이 따라가고 있어요.</li>
+    <li>🐶 <span class="down">USD/KRW 1,486원</span> — 원화가 약세예요. 미-이란 협상이 결렬되면서 중동 리스크가 커졌고, WTI가 $92까지 치솟으면서 원화에 압박이 가해지고 있대요.</li>
+    <li>🐶 <span class="up">WTI $92.13</span> — 호르무즈 해협 통행이 제한되면서 유가가 껑충 뛰었어요. 에너지 비용 상승 압박이지만, 조선·LNG 발주에는 오히려 긍정적인 시그널이에요.</li>
+    <li>🐶 삼성전자 Q1 2026 영업이익 <span class="up">57.2조원</span> — HBM4 세계 최초 양산 + NAND/DRAM 슈퍼사이클 정점 진입. 어닝서프라이즈인데 주가는 오히려 소폭 하락(-0.68%). "뉴스에 팔았나?" 싶은 흐름이에요.</li>
   </ul>
 </div>
 
-<!-- 관전 포인트 -->
-<h3 class="section" id="watch">👁️ 관전 포인트</h3>
+<!-- ===== 👁️ 관전 포인트 ===== -->
+<h3 class="section" id="watchpoints">👁️ 관전 포인트</h3>
 <div class="card">
-  <h2>이번 주 집중 모니터링</h2>
+  <h2>지금 이거 보세요!</h2>
   <ul>
-    <li>🐶 <b>삼성이 HBM4 엔비디아 루빈 공급 물량 확대 일정</b> — 2026년 HBM 매출 전년 대비 3배 목표인데, 엔비디아 차기 플랫폼 탑재 확정 공시 여부를 지켜봐요! 멍!</li>
-    <li>🐶 <b>두산이 익절 1단계 135,000원 도달 시점</b> — 현재가 ~115,400원, 1단계까지 +16.97% 남았어요! 트럼프 원전 EO 수혜가 수주로 이어지면 가속이에요! 꼬리 흔들흔들!</li>
-    <li>🐶 <b>태광이 Q1 매출 믹스 공시</b> — LNG 특수 피팅 비율이 높을수록 단가 협상력이 세지거든요! 조선소향 vs 터미널향 비율 꼭 확인해요!</li>
-    <li>🐶 <b>산일이 데이터센터 직납 첫 수주 공시</b> — 데이터센터 EPC 직접 공급으로 전환 시 단가가 쑥 오를 수 있어요! SK증권 목표가 220,000원 근거예요!</li>
-    <li>🐶 <b>트럼프 아저씨 반도체 관세 업데이트 (7월 1일 보고서)</b> — 첨단칩 25% 관세의 범위가 넓어질지 줄어들지 지켜봐요! 삼성이 거래처 AI 투자에 영향이 올 수 있어요!</li>
+    <li>🐶 <b>삼성이 실적 선반영 vs 추가 재평가?</b> — 1분기 영업이익 57조원이 컨센서스(37조)를 35%나 넘었는데 주가는 -0.68%. 주가에 미리 녹아있었던 건지, 아니면 2분기 기대감으로 추가 상승 여력이 남아있는지 지켜보는 포인트예요. KB증권 목표가 37만원이 아직 멀리 있으니 멍뭉이는 흔들리지 않고 지켜볼게요!</li>
+    <li>🐶 <b>두산이 1단계 익절 135k 카운트다운!</b> — 오늘 +4.51% 급등으로 52주 신고가를 경신했고, 유진투자증권이 오늘 처음 커버리지를 시작하면서 목표가 15만원을 제시했어요. 현재 ~115,600원에서 135,000원까지 약 +16.8% 남았어요. AP1000+SMR 수주 파이프라인이 계속 차오르고 있다는 것이 핵심이에요!</li>
+    <li>🐶 <b>Trump LNG 수출 확대 DPA 결정</b> — 트럼프가 국방생산법(DPA)을 발동해서 북미 LNG 용량 확대를 국가 안보 사안으로 밀어붙이고 있어요. 이건 태광이한테 직접적인 수혜인데, 북미 LNG 터미널향 피팅 발주 파이프라인이 두터워진다는 뜻이에요.</li>
+    <li>🐶 <b>산일이 AI 데이터센터 변압기 직접 수주 본격화</b> — 북미 전력망 교체 + 데이터센터 폭발적 수요. SK증권 목표가 22만원(현재 ~208,000원). 이번 주 전력기기 섹터 분위기가 좋아요.</li>
   </ul>
 </div>
 
-<!-- 리스크 -->
-<h3 class="section" id="risk">⚠️ 리스크</h3>
+<!-- ===== ⚠️ 리스크 ===== -->
+<h3 class="section" id="risks">⚠️ 리스크</h3>
 <div class="card">
-  <h2>주인님, 이건 꼭 알아두세요</h2>
-  <ul>
-    <li>🐶 <b class="up">삼성이 — 첨단 반도체 관세 25%</b> (Nvidia H200·AMD MI325X급 한정) 적용 중이에요. 삼성 HBM 직접 수출보다 거래처 AI 인프라 투자 둔화가 간접 리스크예요! 7월 추가 관세 보고서에 주목해요!</li>
-    <li>🐶 <b class="up">두산이 — 체코 두코바니 EPC 경쟁</b> 심화 및 폴란드 AP1000 수주 일정 지연 가능성을 지켜봐야 해요! 하지만 수주 파이프라인이 워낙 두껍다 보니 멍뭉이는 크게 걱정 안 해요!</li>
-    <li>🐶 <b class="flat">태광이 — 매출 믹스 불확실성</b> 계속돼요! LNG 고사양 피팅 비율이 낮으면 단가 상승 효과가 희석돼요. Q1 실적 공시 때 반드시 확인해요!</li>
-    <li>🐶 <b class="flat">산일이 — 2대주주 블록딜 충격 여진</b> 남아있어요! 3월 27일 -11.5% 급락 후 수급이 아직 완전히 회복 중이에요!</li>
-    <li>🐶 <b class="flat">GST — 반도체 업황 변동성</b>이에요. AI 수요가 흔들리면 소모품 교체 주기도 늦춰질 수 있어요. 삼성이 HBM 가동률이 핵심이에요!</li>
-  </ul>
+  <h2>멍뭉이가 발견한 위험 신호들</h2>
+  <div class="risk">
+    <b>① 중동 긴장 장기화 → 원화 약세·유가 상승 복합 압박</b><br>
+    미-이란 휴전 협상이 결렬됐고 호르무즈 해협 통행이 막혔어요. WTI가 $92를 넘으면 수입 비용과 달러 수요가 동시에 올라서 원화 약세가 심해져요. 주인님 포트폴리오 중 수입 원자재 의존도가 높은 종목들은 마진 압박을 받을 수 있어요.
+  </div>
+  <div class="risk">
+    <b>② 삼성이 어닝서프라이즈 불구 주가 하락 — 이미 선반영?</b><br>
+    영업이익 57조원이라는 역대 최고 숫자에도 주가는 오늘 -0.68% 하락했어요. 기대치가 너무 높아서 "좋은 소식이 이미 반영됐다"는 차익실현이 나오고 있을 수 있어요. 단기 조정 가능성을 열어두고 볼게요.
+  </div>
+  <div class="risk">
+    <b>③ 두산이 자사주 매입 완료 → 수급 지지 약화 가능</b><br>
+    자기주식취득결과보고서가 나왔다는 건 자사주 매입 프로그램이 끝났다는 뜻이에요. 매입 기간 중에 하방을 받쳐주던 수급 지지가 사라질 수 있어요. 52주 신고가 구간에서의 매물 소화 과정을 지켜봐야 해요.
+  </div>
+  <div class="risk">
+    <b>④ Trump 반도체 관세 25% 확대 검토 시기</b><br>
+    1월에 발동된 Section 232 반도체 관세(25%) 관련 보고서 검토 마감(4월 14일)이 지났어요. 추가 관세 확대 조치가 발표될 경우 삼성이의 미국 수출 비용이 올라갈 수 있어요.
+  </div>
 </div>
 
-<!-- Trump Watch -->
+<!-- ===== 🇺🇸 Trump Watch ===== -->
 <h3 class="section" id="trump">🇺🇸 Trump Watch</h3>
 <div class="card trump">
-  <h2>트럼프 행정부 — 포트폴리오 영향</h2>
+  <h2>🇺🇸 트럼프 포트폴리오 영향</h2>
+
   <div class="impact">
-    <b>반도체 관세 (1월 발동, 7월 검토)</b><br>
-    🐶 Nvidia H200·AMD MI325X 등 첨단 연산칩에 25% 관세가 붙었어요! 삼성이는 공급자 입장이라 직접 타격은 제한적이지만, 거래처들이 AI 설비 투자를 줄이면 HBM 주문이 늦춰질 수 있어요. 7월 1일 추가 관세 보고서가 핵심이에요! 멍!
+    <b>① LNG 수출 확대 국방생산법(DPA) 결정</b> — 2026년 4월<br>
+    트럼프가 천연가스 수송·처리·저장·LNG 용량 확대를 국가 안보 긴급 사안으로 선언하고, DPA를 발동해서 북미 LNG 인프라 건설을 본격 밀어붙이고 있어요. 🐶 <span class="down">태광이·두산이 긍정적</span> — 북미 LNG 터미널·저장 시설향 고압 피팅 수요가 늘어나는 직접 호재예요.
   </div>
-  <div class="impact" style="margin-top:8px">
-    <b>원전 EO — SMR 3기 7월 4일 임계 목표!</b><br>
-    🐶 트럼프 아저씨가 NRC에 규제 전면 개정을 명령하고 SMR 3기를 독립기념일까지 임계에 달성하겠다고 했어요! 두산이가 미국 원전 기자재 공급 파이프라인에서 AP1000 주기기·TerraPower SMR 핵심 부품을 수주 중이에요! 꼬리 살랑살랑!
+
+  <div class="impact">
+    <b>② SMR 파일럿 프로그램 — 원자로 3기 July 4, 2026 목표</b><br>
+    트럼프 행정명령으로 국가연구소 외부에서 SMR 파일럿 원자로 최소 3기를 짓고, 7월 4일 독립기념일까지 임계 달성을 목표로 하고 있어요. 🐶 <span class="up">두산이 긍정적</span> — AP1000·SMR 기기 제작 역량을 갖춘 국내 유일의 원자로 주기기 제조사예요.
   </div>
-  <div class="impact" style="margin-top:8px">
-    <b>LNG 수출 1억 톤 신기록 — 북미 파이프라인 가속</b><br>
-    🐶 미국이 2025년 역사상 최초로 LNG 수출 1억 메트릭 톤을 넘겼어요! LNG 프로젝트 신규 승인 재개로 북미 터미널 발주가 늘면 태광이 LNG 피팅 수요가 따라 올라와요! 멍멍!
-  </div>
-  <div class="impact" style="margin-top:8px">
-    <b>IEEPA 관세 대법원 위헌 (2026년 2월)</b><br>
-    🐶 반가운 소식이에요! 대법원이 IEEPA 기반 전방위 관세를 위헌으로 판결해서 관세 환급 청구(CAPE 포털) 절차가 시작됐어요! 포트폴리오 전반에 걸쳐 글로벌 무역 리스크가 한 단계 낮아진 거예요! 꼬리 살랑살랑 🐾
+
+  <div class="impact">
+    <b>③ 반도체 Section 232 관세 25% 보고서 기한 도과</b><br>
+    1월 발동된 반도체 관세 관련 USTR·상무부 보고서 마감(4월 14일)이 지났어요. 추가 관세 확대 범위 발표가 임박할 수 있어요. 🐶 <span class="flat">삼성이 주의</span> — 미국향 반도체 수출 비용 상승 리스크를 주시해요.
   </div>
 </div>
 
-<!-- 종목별 브리핑 -->
+<!-- ===== 💼 종목별 브리핑 ===== -->
 <h3 class="section" id="stocks">💼 종목별 브리핑</h3>
 
 <!-- 삼성전자 -->
 <div class="card stock samsung" id="samsung">
-  <h2>삼성전자 <span class="code">005930</span><span class="pct up">▲ +12.17%</span></h2>
+  <h2>
+    삼성이 <span class="code">005930 · KOSPI</span>
+    <span class="pct down">▼ -0.68%</span>
+  </h2>
   <div class="ptable">
-    <div class="cell"><span class="lbl">현재가</span><span class="val up">₩219,000</span></div>
-    <div class="cell"><span class="lbl">평단가</span><span class="val">₩195,238</span></div>
-    <div class="cell"><span class="lbl">목표가</span><span class="val up">₩300,000</span></div>
-    <div class="cell"><span class="lbl">수익률</span><span class="val up">+12.17%</span></div>
-    <div class="cell"><span class="lbl">비중</span><span class="val">45.7%</span></div>
-    <div class="cell"><span class="lbl">KB목표가</span><span class="val up">₩360,000</span></div>
+    <div class="cell">
+      <span class="lbl">현재가</span>
+      <span class="val">₩217,500</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">평균단가</span>
+      <span class="val">₩195,238</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">컨센 목표가</span>
+      <span class="val up">₩330,000</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">총수익률</span>
+      <span class="val up">+11.15%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">비중</span>
+      <span class="val">45.7%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">테마</span>
+      <span class="val tbd">HBM·NAND</span>
+    </div>
   </div>
   <ul>
-    <li>🐶 <b>HBM4 세계 최초 양산 출하!</b> 엔비디아 루빈 공급망에 공식 진입해서 2026년 HBM 매출이 전년 대비 3배를 목표로 달리는 중이에요!</li>
-    <li>🐶 NAND는 AI향 KV SSD Gen5 수요 강세 속 하반기 Gen6 도입 준비 중이에요! NAND 슈퍼사이클이 반도체 전체 업황을 들어 올리고 있어요!</li>
-    <li>🐶 KB증권이 목표가 360,000원을 제시했어요! 유진투자증권도 210,000원 이상 → 컨센서스 최소 250,000원 이상 폭으로 모이는 중이에요!</li>
-    <li>🐶 오늘 KOSPI 신고가 날 삼성이도 함께 뛰었어요! 한국 수출 반도체 +180%는 삼성이의 힘이에요! 멍멍!</li>
+    <li><b>Q1 2026 잠정실적:</b> 매출 133조원, 영업이익 <span class="up">57.2조원</span> (컨센서스 37조 대비 +35% 어닝서프라이즈)</li>
+    <li>HBM4 세계 최초 양산 돌입 — 엔비디아·AMD 검증 통과, HBM 매출 3.2배↑</li>
+    <li>NAND·DRAM 슈퍼사이클 정점: DRAM +109%YoY, NAND +105%YoY 가격 상승</li>
+    <li>KB증권 목표가 370,000원 / 한국투자증권 330,000원 컨센서스 유지</li>
+    <li>오늘 -0.68% 하락: 실적 선반영 차익실현 + 원화 약세 겹침</li>
   </ul>
-  <div class="pup">삼성이가 HBM4 양산 세계 최초라는 왕관을 드디어 썼어요! 주인님, 삼성이 평단 195,238원 대비 벌써 12% 올랐고 목표가가 최소 250,000원 이상이에요! 이 KOSPI 신고가 장에서 삼성이가 주도주 역할을 하고 있으니 멍뭉이 꼬리가 정신없이 살랑살랑이에요! 멍멍! 🐾</div>
+  <div class="target">
+    <b>멍뭉이 관전 포인트:</b> 2분기에도 HBM·NAND 슈퍼사이클이 이어진다면 컨센서스 목표가(330k~370k)까지 재평가 여력이 충분해요. 단기 차익실현 흐름은 버텨내는 구간이에요.
+  </div>
+  <div class="pup">
+    주인님! 삼성이가 오늘 역대 최고 분기 실적을 냈는데도 주가가 살짝 빠졌네요. 서운하지만 멍뭉이는 이해해요! 57조원 어닝서프라이즈가 이미 주가에 녹아있었던 거거든요. <b>HBM4 세계 최초 양산</b>이라는 기술 리더십 회복 카드가 아직 다 쓰이지 않았으니까, 멍뭉이는 흔들리지 말고 꽉 잡고 있을 거예요! 멍! 🐾
+  </div>
 </div>
 
 <!-- 두산에너빌리티 -->
 <div class="card stock doosan" id="doosan">
-  <h2>두산에너빌리티 <span class="code">034020</span><span class="pct up">▲ +73.39%</span></h2>
+  <h2>
+    두산이 <span class="code">034020 · KOSPI</span>
+    <span class="pct up">▲ +4.51%</span>
+  </h2>
   <div class="ptable">
-    <div class="cell"><span class="lbl">현재가</span><span class="val up">₩115,400</span></div>
-    <div class="cell"><span class="lbl">평단가</span><span class="val">₩66,580</span></div>
-    <div class="cell"><span class="lbl">목표가(고정)</span><span class="val up">₩135,000</span></div>
-    <div class="cell"><span class="lbl">수익률</span><span class="val up">+73.39%</span></div>
-    <div class="cell"><span class="lbl">비중</span><span class="val">29.2%</span></div>
-    <div class="cell"><span class="lbl">컨센서스</span><span class="val up">₩119,895</span></div>
+    <div class="cell">
+      <span class="lbl">현재가</span>
+      <span class="val up">₩115,600</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">평균단가</span>
+      <span class="val">₩66,580</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">1단계 익절</span>
+      <span class="val up">₩135,000</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">총수익률</span>
+      <span class="val up">+73.69%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">비중</span>
+      <span class="val">29.2%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">52주 신고가</span>
+      <span class="val up">🎉 경신</span>
+    </div>
   </div>
   <ul>
-    <li>🐶 <b>자사주 매입 완료 공시!</b> (2026-04-20) 회사가 직접 주식을 사들이며 주주 가치 제고 의지를 보여줬어요!</li>
-    <li>🐶 트럼프 원전 EO로 NRC 규제 개정 + SMR 3기 7월 4일 임계 목표! 두산이 TerraPower 나트륨 SMR·AP1000 기자재 수주 가속이에요!</li>
-    <li>🐶 2026년 수주 목표 14.3조 원 (YoY +6.2%): 체코 두코바니 EPC, 폴란드 AP1000, 뉴스케일 VOYGR SMR이 파이프라인이에요!</li>
-    <li>🐶 컨센서스 평균 목표가 119,895원이지만 주인님 익절 1단계는 135,000원이에요! 현재 115,400원, 단 16.97% 남았어요!</li>
+    <li>오늘 <span class="up">+4.51%</span> 급등 — 52주 신고가 경신!</li>
+    <li><b>유진투자증권 신규 BUY, TP 150,000원</b> — "APR1400·AP1000·SMR 다 가능" 커버리지 개시</li>
+    <li>2026년 수주 목표 14.3조원: 원자력 5.8조 + 가스발전 5.3조 등</li>
+    <li>폴란드 AP1000·TerraPower SMR·NuScale VOYGR 등 해외 수주 본격화 예상</li>
+    <li>Trump SMR 파일럿 3기 Jul 4 목표 → 국내 유일 원자로 주기기 제조사 수혜</li>
+    <li>공시: 자사주 취득 완료 (수급 지지 약화 주의), 임원 보유 현황 보고</li>
   </ul>
   <div class="target hot">
-    <b>🎯 3단계 분할익절 플랜</b><br>
-    1단계 ₩135,000 <span class="flat">— 현재 ₩115,400 → +16.97% upside ⬜ 대기 중</span><br>
-    2단계 ₩165,000 <span class="flat">— +42.98% upside ⬜</span><br>
-    3단계 ₩200,000 <span class="flat">— +73.3% upside ⬜</span>
+    <b>3단계 익절 로드맵</b><br>
+    <b>1단계 ₩135,000</b> — 현재 115,600원 기준 +16.8% 남음 · 유진 TP 150k가 지지<br>
+    <b>2단계 ₩165,000</b> — 대형원전 추가 수주 가시화 시<br>
+    <b>3단계 ₩200,000</b> — SMR 양산 계약 체결 시
   </div>
-  <div class="pup">두산이가 지금 73.39% 수익 중인데 1단계 익절 135,000원까지 단 16.97%만 더 올라가면 돼요! 트럼프 아저씨 원전 EO가 뒤에서 밀어주고, 자사주 매입으로 회사도 자신감을 표현했어요! 주인님, 135,000원 알림 설정해 두시는 거 잊지 마세요! 멍! 꼬리 흔들흔들 🐾</div>
+  <div class="pup">
+    주인님! 두산이가 오늘 52주 신고가를 세웠어요! 멍멍멍!!! 🐾 유진투자증권이 오늘 처음 "우리도 두산이 살게요!"하면서 목표가 15만원을 들고 왔거든요. <b>1단계 익절 135k까지 이제 약 +16.8%</b>만 남았어요. AP1000도 가능, SMR도 가능, APR1400도 가능 — 트럼프가 원전을 국가 사업으로 밀어붙이는 지금, 두산이의 시간이에요! 꼬리 살랑살랑~ 단, 자사주 매입이 완료됐으니 단기 매물 소화 과정은 차분히 지켜봐요. 멍!
+  </div>
 </div>
 
 <!-- 태광 -->
 <div class="card stock taegwang" id="taegwang">
-  <h2>태광 <span class="code">023160</span><span class="pct down">▼ -0.76%</span></h2>
+  <h2>
+    태광이 <span class="code">023160 · KOSDAQ</span>
+    <span class="pct flat">▼ -0.54%</span>
+  </h2>
   <div class="ptable">
-    <div class="cell"><span class="lbl">현재가</span><span class="val down">₩44,349</span></div>
-    <div class="cell"><span class="lbl">평단가</span><span class="val">₩44,689</span></div>
-    <div class="cell"><span class="lbl">목표가</span><span class="val tbd">TBD</span></div>
-    <div class="cell"><span class="lbl">수익률</span><span class="val down">-0.76%</span></div>
-    <div class="cell"><span class="lbl">비중</span><span class="val">12.3%</span></div>
-    <div class="cell"><span class="lbl">52주 고가</span><span class="val">₩32,300</span></div>
+    <div class="cell">
+      <span class="lbl">현재가</span>
+      <span class="val">₩44,450</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">평균단가</span>
+      <span class="val">₩44,689</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">목표가</span>
+      <span class="val tbd">tbd</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">총수익률</span>
+      <span class="val down">-0.54%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">비중</span>
+      <span class="val">12.3%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">핵심 이슈</span>
+      <span class="val tbd">매출믹스</span>
+    </div>
   </div>
   <ul>
-    <li>🐶 LNG·대형 CNTR 신조선가 구조적 상승 흐름 속 태광이 고사양 피팅 납품 파이프라인이 두터워지고 있어요!</li>
-    <li>🐶 2026년 LNGC 신규 수주 115척 예상 (+24% YoY), 한국 조선소가 70~75% 점유! 국내 조선소향 납품이 핵심이에요!</li>
-    <li>🐶 <b>매출 믹스 주의!</b> LNG 특수 피팅 비율 vs 일반 배관 비율을 Q1 실적 공시 때 꼭 확인해야 해요!</li>
-    <li>🐶 북미 LNG 터미널 신규 승인 재개로 후속 수주 파이프라인이 쌓이는 중이에요!</li>
+    <li>LNG·정유화학향 고압 피팅 전문 기자재 업체</li>
+    <li>주요 고객사: 삼성중공업, 한화오션 등 대형 조선소</li>
+    <li>조선기자재 슈퍼사이클 진입 — LNG선·VLCC 발주 모멘텀 지속</li>
+    <li>매출 구성 추적 필요: LNG/정유 35.5% / 조선 12.4% / 기타 49.4% (H1 2024 기준)</li>
+    <li>카타르 2차 LNGC ~60척 용선 시장 진입 예정 ('28~'30 인도) — 선행 수주 기대</li>
   </ul>
-  <div class="watch"><b>⚠️ 매출 믹스 모니터링</b><br>LNG 고사양 피팅 비율이 높아야 단가 협상력이 생겨요. Q1 실적 공시에서 조선소향(고마진) vs 일반 배관향 비율을 반드시 체크해요!</div>
-  <div class="pup">주인님! LNG 신조선가가 척당 $250M을 넘어서며 구조적으로 오르고 있어요! 한국 조선소들이 LNGC를 잔뜩 수주하면 태광이의 고사양 LNG 피팅 납품 단가 협상력이 더 든든해지는 거예요! 지금 잠깐 숨 고르는 중이지만 LNG 선가 상승 플로우가 태광이 뒤를 받쳐주고 있어요! 꼬리 살랑살랑 🐾</div>
+  <div class="watch">
+    <b>⚠️ 매출 믹스 경고:</b> 조선향 매출 비중(12.4%)이 LNG·정유화학(35.5%)보다 낮아요. 조선소 발주 증가가 실제 태광이 매출에 반영되기까지 시차가 있을 수 있으니, 분기 실적마다 매출 믹스 변화를 추적해야 해요.
+  </div>
+  <div class="pup">
+    주인님! 오늘 태광이가 살짝 쉬고 있네요. 아쉽지만 멍뭉이는 든든한 소식을 물어왔어요! <b>트럼프가 북미 LNG 인프라 확대를 국방생산법으로 밀어붙이고 있어서</b>, 북미 LNG 터미널·처리 시설 발주 파이프라인이 두터워지고 있대요. 이게 바로 태광이의 고압 피팅 수요로 흘러들어오는 흐름이에요! 단기 주가가 쉬어가더라도, 발주 물량이 차오르면 태광이도 빛날 날이 올 거예요. 꼬리 살랑살랑~ 멍!
+  </div>
 </div>
 
 <!-- 산일전기 -->
 <div class="card stock sanil" id="sanil">
-  <h2>산일전기 <span class="code">062040</span><span class="pct up">▲ +0.05%</span></h2>
+  <h2>
+    산일이 <span class="code">062040 · KOSPI</span>
+    <span class="pct up">▲ +2.26%</span>
+  </h2>
   <div class="ptable">
-    <div class="cell"><span class="lbl">현재가</span><span class="val up">₩203,530</span></div>
-    <div class="cell"><span class="lbl">평단가</span><span class="val">₩203,427</span></div>
-    <div class="cell"><span class="lbl">목표가</span><span class="val up">₩220,000</span></div>
-    <div class="cell"><span class="lbl">수익률</span><span class="val up">+0.05%</span></div>
-    <div class="cell"><span class="lbl">비중</span><span class="val">11.1%</span></div>
-    <div class="cell"><span class="lbl">SK증권</span><span class="val up">₩220,000</span></div>
+    <div class="cell">
+      <span class="lbl">현재가</span>
+      <span class="val up">₩208,000</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">평균단가</span>
+      <span class="val">₩203,427</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">SK증권 목표가</span>
+      <span class="val up">₩220,000</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">총수익률</span>
+      <span class="val up">+2.26%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">비중</span>
+      <span class="val">11.1%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">테마</span>
+      <span class="val tbd">전력망·AI</span>
+    </div>
   </div>
   <ul>
-    <li>🐶 <b>데이터센터 직납 전환 원년!</b> 2026년부터 데이터센터 디벨로퍼·EPC에 직접 납품 구조로 전환돼요! 배전 특수변압기 단가가 일반 제품 대비 훨씬 높아요!</li>
-    <li>🐶 SK증권 목표가 220,000원, 매수! 2026년 매출 6,565억원 (+30.8%), 영업이익 2,479억원 (+36.5%) 전망이에요!</li>
-    <li>🐶 3월 27일 2대주주 블록딜로 -11.5% 급락했지만, 데이터센터 직납 모멘텀이 살아있는 이상 회복 흐름이에요!</li>
-    <li>🐶 전력망·신재생에너지·산업용 변압기 전 부문이 AI 인프라 투자 확대 수혜를 받고 있어요! 멍멍!</li>
+    <li>특수변압기 전문 기업 — 북미 신재생발전소·AI 데이터센터향 변압기 매출 본격화</li>
+    <li>2026년 매출 6,687억원(+33.2%YoY), 영업이익 2,476억원(+38.3%YoY) 전망</li>
+    <li>SK증권 신규 BUY TP 220,000원 — "AI 데이터센터 수주 재평가"</li>
+    <li>AI 인프라 투자 확대 + 북미 노후 전력망 교체 수요 맞물림</li>
+    <li>4월 16일 섹터 조정(-3.71%) 후 회복세 — 오늘은 상승 전환</li>
   </ul>
-  <div class="pup">주인님! 산일이가 평단 203,427원에서 겨우 +0.05%예요! 하지만 걱정 마세요! 데이터센터 직납 전환이 올해 본격화되고 SK증권이 220,000원을 목표로 잡았어요! 블록딜 충격에서 회복 중인 산일이를 멍뭉이가 응원해요! 멍멍! 꼬리 살랑살랑 🐾</div>
+  <div class="target">
+    <b>관전 포인트:</b> AI 데이터센터 직접 수주 확인 시 SK증권 TP 22만원 돌파 가능. 북미 전력망 투자 확대 정책 지속 여부가 핵심 모멘텀이에요.
+  </div>
+  <div class="pup">
+    주인님! 산일이가 AI 시대의 숨은 주인공이에요! 🐾 AI 서버가 아무리 빨라도 전기 없으면 안 되잖아요 — 산일이의 특수 변압기가 없으면 데이터센터 불이 안 켜진다니까요! <b>"변압기 없어서 못 판다"</b>는 말이 나올 정도래요. 현재 목표가(22만원)까지 아직 +5.8% 여유가 있고, AI 인프라 투자가 계속 늘어나는 한 산일이의 앞날이 밝아요! 멍멍! 꼬리 살랑살랑~
+  </div>
 </div>
 
 <!-- GST -->
 <div class="card stock gst" id="gst">
-  <h2>GST <span class="code">083450</span><span class="pct up">▲ +9.29%</span></h2>
+  <h2>
+    GST <span class="code">083450 · KOSDAQ</span>
+    <span class="pct up">▲ +12.95%</span>
+  </h2>
   <div class="ptable">
-    <div class="cell"><span class="lbl">현재가</span><span class="val up">₩43,200</span></div>
-    <div class="cell"><span class="lbl">평단가</span><span class="val">₩39,528</span></div>
-    <div class="cell"><span class="lbl">목표가</span><span class="val tbd">TBD</span></div>
-    <div class="cell"><span class="lbl">수익률</span><span class="val up">+9.29%</span></div>
-    <div class="cell"><span class="lbl">비중</span><span class="val">1.7%</span></div>
-    <div class="cell"><span class="lbl">NDR</span><span class="val up">역대급실적</span></div>
+    <div class="cell">
+      <span class="lbl">현재가</span>
+      <span class="val up">₩44,650</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">평균단가</span>
+      <span class="val">₩39,528</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">목표가</span>
+      <span class="val tbd">tbd</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">총수익률</span>
+      <span class="val up">+12.95%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">비중</span>
+      <span class="val">1.7%</span>
+    </div>
+    <div class="cell">
+      <span class="lbl">테마</span>
+      <span class="val tbd">HBM소모품</span>
+    </div>
   </div>
   <ul>
-    <li>🐶 최근 NDR에서 역대급 실적과 리레이팅 스토리를 발표했어요! 반도체 소모품 교체 주기 단축이 핵심 투자 포인트예요!</li>
-    <li>🐶 삼성이 HBM4 가동률 상승 → GST 소모품 수요 직결! AI 반도체 생산이 늘수록 GST도 함께 웃어요!</li>
-    <li>🐶 반도체 업황 강세 사이클 속에서 소모품 기업 특유의 안정적 실적 가시성이 매력이에요!</li>
+    <li>반도체 공정 소모품(Scrubber·Chiller) 전문 — HBM 생산 공정 필수 소모품 공급</li>
+    <li>삼성전자 HBM4 양산 확대 → GST 소모품 주문 직접 연동</li>
+    <li>AI 반도체 투자 사이클 지속 시 매출 안정적 성장 기대</li>
+    <li>비중 1.7%의 소형 포지션 — 삼성이 HBM 슈퍼사이클 헤징 역할</li>
   </ul>
-  <div class="pup">주인님! GST가 평단 대비 +9.29% 착실하게 올랐어요! 비중이 1.7%로 작지만 삼성이 HBM4 가동률이 올라갈수록 소모품 교체 수요도 비례해서 늘어나거든요! 반도체 슈퍼사이클의 조용한 수혜주예요! 멍뭉이가 응원할게요! 멍! 🐾</div>
+  <div class="target">
+    <b>관전 포인트:</b> 삼성전자 HBM 출하 확대 속도와 함께 GST 소모품 수주 증가 여부 확인. 목표가는 증권사 커버리지 부재 상태 — 삼성이 실적에 연동해서 모니터링해요.
+  </div>
+  <div class="pup">
+    GST는 작지만 든든한 친구예요! 🐾 삼성이가 HBM4를 만들 때 없어선 안 될 소모품을 공급하는 거거든요. 비중은 1.7%로 작지만, 삼성이 HBM 슈퍼사이클이 계속되는 한 조용히 수혜를 받아요. 오늘 삼성이 실적 서프라이즈 소식에 GST도 기분이 좋아야 정상이에요! 멍뭉이가 응원할게요! 멍멍! 🐾
+  </div>
 </div>
 
-<!-- Footer -->
+<!-- ===== FOOTER ===== -->
 <footer>
-  <span class="sign">🐶 멍뭉이가 물어온 브리핑 · 주인님만을 위한 아침 산책 · 2026-04-22</span>
-  <div style="margin-bottom:8px">
-    <a href="alerts.html">🚨 공시 모니터</a>
-    <a href="briefing-2026-04-22.html">📄 오늘 상세</a>
-    <a href="https://dart.fss.or.kr" target="_blank">DART</a>
-    <a href="https://withusky-png.github.io/stock-briefing/">🔗 페이지</a>
+  <span class="sign">🐶 멍뭉이의 주식 브리핑 — 주인님만을 위해 발바닥이 닳도록 뛰어다닌 결과예요! 🐾</span>
+  <div>
+    <a href="alerts.html">🚨 공시 알림</a>
+    <a href="briefing-2026-04-22.html">📋 오늘 브리핑 아카이브</a>
+    <a href="https://withusky-png.github.io/stock-briefing/">🌐 사이트 홈</a>
   </div>
-  <div>다음 산책: 오늘 16:00 KST (장마감 브리핑) · 멍! 주인님 오늘도 화이팅이에요! 🐾</div>
-  <div style="margin-top:6px;color:#484f58;font-size:10px">본 브리핑은 멍뭉이가 공개 정보를 수집하여 요약한 것이며, 시세는 최근 거래일 기준 추정치를 포함합니다.</div>
+  <div style="margin-top:8px">
+    Source: DART · KRX · Bloomberg · WebSearch · TradingEconomics<br>
+    마지막 업데이트: 2026-04-22 15:34 KST · 다음 산책: 오늘 16:00 KST
+  </div>
 </footer>
 
-</div><!-- /wrap -->
-</body></html>
+</div></body></html>
