@@ -2,7 +2,9 @@ name: DART Disclosure Alert
 
 on:
   schedule:
-    - cron: '0 * * * *'   # 매시 정각 UTC = 매시 09분 전 KST 체크
+    - cron: '0 0 * * *'   # 09:00 KST
+    - cron: '0 3 * * *'   # 12:00 KST
+    - cron: '0 8 * * *'   # 17:00 KST
   workflow_dispatch:       # 수동 실행 가능
   push:
     paths:
