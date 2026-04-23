@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8">
+<html lang="ko"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="3600">
-<title>🚨 Disclosure Alerts</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;line-height:1.6}
-.wrap{max-width:720px;margin:0 auto;padding:24px 16px}
-h1{font-size:22px;margin:0 0 4px;color:#f85149}
-.sub{color:#8b949e;font-size:13px;margin-bottom:8px}
-.nav{margin-bottom:16px}
-.nav a{color:#58a6ff;font-size:13px;text-decoration:none;margin-right:12px}
-.alert{background:#161b22;border-left:3px solid #f85149;border-radius:8px;padding:14px 16px;margin-bottom:10px}
-.alert .stock{font-weight:600;color:#ffd966;font-size:14px}
-.alert .time{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;margin-left:8px}
-.alert .title{color:#f0f6fc;font-size:15px;margin:6px 0}
-.alert a{color:#58a6ff;font-size:12px;text-decoration:none}
-.empty{color:#6e7681;text-align:center;padding:40px;font-size:14px;background:#161b22;border-radius:8px}
-footer{color:#6e7681;font-size:11px;text-align:center;margin-top:24px}
-</style></head><body><div class="wrap">
+<title>멍뭉이 공시 알림</title>
+<style>*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 40px}
+a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+</style></head><body>
+<div class="wrap">
+<div style="background:linear-gradient(135deg,#1a2a3a 0%,#0f1620 60%,#0d1117 100%);border:1px solid #f8514444;border-radius:16px;padding:22px 20px 18px;margin-bottom:14px;box-shadow:0 1px 0 #ffffff08 inset"><h1 style="font-size:22px;margin:0 0 2px;color:#f0f6fc;font-weight:700;letter-spacing:-0.3px">&#x1F6A8; 멍뭉이가 물어온 공시 알림</h1><div style="color:#8b949e;font-size:13px;margin-bottom:16px">2026-04-23 16:17 KST · 2일 누적 총 0건</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div style="background:#f8514920;border:1px solid #f8514944;border-radius:10px;padding:10px 12px;text-align:center"><div style="color:#f85149;font-size:10px;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin-bottom:4px">긴급</div><div style="font-size:24px;font-weight:700;color:#f85149;font-family:ui-monospace,monospace">0</div></div><div style="background:#d2992220;border:1px solid #d2992244;border-radius:10px;padding:10px 12px;text-align:center"><div style="color:#d29922;font-size:10px;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin-bottom:4px">경고</div><div style="font-size:24px;font-weight:700;color:#d29922;font-family:ui-monospace,monospace">0</div></div><div style="background:#1f6feb20;border:1px solid #1f6feb44;border-radius:10px;padding:10px 12px;text-align:center"><div style="color:#58a6ff;font-size:10px;text-transform:uppercase;letter-spacing:0.4px;font-weight:600;margin-bottom:4px">일반</div><div style="font-size:24px;font-weight:700;color:#58a6ff;font-family:ui-monospace,monospace">0</div></div></div></div>
+<div style="background:linear-gradient(135deg,#2a1f3a 0%,#161b22 100%);border:1px solid #a371f766;border-radius:12px;padding:14px 16px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-start"><div style="font-size:32px;line-height:1;flex-shrink:0;margin-top:2px">&#x1F436;</div><div style="color:#f0f6fc;font-size:14px;line-height:1.6"><b style="color:#d2b8ff">멍뭉이</b>가 2026-04-23 16:17 KST에 공시를 물어왔어요!<br>보유 5종목 (<b style="color:#d2b8ff">삼성전자 · 두산에너빌리티 · 태광 · 산일전기 · GST</b>) 최근 2일 DART 공시 점검 완료.<br><span style="color:#8b949e;font-size:12px">&#x203B; DART API sandbox 차단 &#x2192; WebSearch 폴백 대체 점검 완료. 멍!</span></div></div>
+<div style="position:sticky;top:0;z-index:5;background:#0d1117ee;backdrop-filter:blur(6px);margin:0 -16px 16px;padding:8px 16px;border-bottom:1px solid #21262d;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none"><a href="#all" style="display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;text-decoration:none;background:#f85149;color:#fff;border:1px solid #f85149">#전체 (0)</a><a href="#urgent" style="display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;text-decoration:none;background:#161b22;border:1px solid #30363d;color:#c9d1d9">#긴급 (0)</a><a href="#warn" style="display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;text-decoration:none;background:#161b22;border:1px solid #30363d;color:#c9d1d9">#경고 (0)</a><a href="#info" style="display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;text-decoration:none;background:#161b22;border:1px solid #30363d;color:#c9d1d9">#일반 (0)</a></div>
+<div style="display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:11px 13px;background:#1a2a3a;border:1px solid #1f6feb66;border-radius:10px"><a href="https://claude.ai/code/scheduled/trig_014Yz3aiz6WmKcT637L7pyQc" target="_blank" style="display:inline-block;background:#1f6feb;color:#fff;padding:7px 13px;border-radius:6px;font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none">&#x21BA; 수동 재실행</a><span style="color:#8b949e;font-size:12px;line-height:1.4">DART API 차단 시 수동 재실행. 멍!</span></div>
+<div id="all">
 
-<h1>🚨 Disclosure Alerts</h1>
-<div class='sub'>마지막 체크: 2026-04-23 15:28 KST · 1시간마다 자동 새로고침 · 신규 0건</div>
-<div class='nav'><a href='index.html'>← 일일 브리핑</a></div>
-<!--ALERT_START-->
-<!--ALERT_END-->
-<div class='empty'>최근 2일 내 신규 공시 없음</div>
-<footer>Generated at 2026-04-23 15:28 KST — Source: dart.fss.or.kr</footer>
+
+
+<div style="color:#6e7681;text-align:center;padding:48px 20px;font-size:14px;background:#161b22;border-radius:12px;border:1px solid #30363d"><div style="font-size:32px;margin-bottom:12px">&#x1F436;</div><div>최근 2일 내 신규 공시를 찾지 못했어요.</div><div style="font-size:12px;margin-top:8px;color:#484f58">DART API 접근 차단 (sandbox) / WebSearch 폴백 실행 완료 — 4/22~23 신규 공시 없음. 멍!</div></div>
+</div>
+<footer style="color:#6e7681;font-size:11px;text-align:center;margin-top:32px;padding-top:16px;border-top:1px solid #21262d">
+다음 점검: <strong style="color:#c9d1d9">익일 08:00 KST</strong> &nbsp;&middot;&nbsp; Source: dart.fss.or.kr &nbsp;&middot;&nbsp; Generated: 2026-04-23 16:17 KST
+</footer>
+<script>document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);var t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});</script>
 </div></body></html>
