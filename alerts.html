@@ -1,103 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0d1117">
 <meta http-equiv="refresh" content="3600">
-<title>🚨 멍뭉이 공시 알림</title>
+<title>🚨 Disclosure Alerts</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Pretendard,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:760px;margin:0 auto;padding:20px 16px 40px}
-a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
-.hero{background:linear-gradient(135deg,#1a2a3a 0%,#0f1620 60%,#0d1117 100%);border:1px solid #1f6feb44;border-radius:16px;padding:22px 20px 18px;margin-bottom:14px;box-shadow:0 1px 0 #ffffff08 inset}
-.hero h1{font-size:22px;margin:0 0 2px;color:#f0f6fc;letter-spacing:-0.3px;font-weight:700}
-.hero .date{color:#8b949e;font-size:13px;margin-bottom:14px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px}
-.stat{background:#0d111766;border:1px solid #30363d66;border-radius:10px;padding:10px 12px}
-.stat .lbl{color:#8b949e;font-size:10px;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:2px}
-.stat .val{font-size:17px;font-weight:700;font-family:ui-monospace,SFMono-Regular,monospace;color:#f0f6fc}
-.stat .val.urgent{color:#f85149}.stat .val.warn{color:#d29922}.stat .val.info{color:#58a6ff}
-.chips{position:sticky;top:0;z-index:5;background:#0d1117ee;backdrop-filter:blur(6px);margin:0 -16px 16px;padding:8px 16px;border-bottom:1px solid #21262d;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chips a{display:inline-block;padding:5px 11px;border-radius:999px;font-size:12px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;white-space:nowrap;font-weight:500}
-.chips a:hover{background:#21262d;text-decoration:none;border-color:#484f58}
-.regen{display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:11px 13px;background:#1a2a3a;border:1px solid #1f6feb66;border-radius:10px}
-.regen a{display:inline-block;background:#1f6feb;color:#fff;padding:7px 13px;border-radius:6px;font-size:13px;font-weight:600;white-space:nowrap}
-.regen a:hover{background:#3d86f0;text-decoration:none}
-.regen .hint{color:#8b949e;font-size:12px;line-height:1.4}
-.pup-intro{background:linear-gradient(135deg,#2a1f3a 0%,#161b22 100%);border:1px solid #a371f766;border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start}
-.pup-intro .face{font-size:32px;line-height:1;flex-shrink:0;margin-top:2px}
-.pup-intro .msg{color:#f0f6fc;font-size:14px;line-height:1.6}
-.pup-intro .msg b{color:#d2b8ff}
-.alert{background:#161b22;border:1px solid #30363d;border-left:3px solid #8b949e;border-radius:8px;padding:11px 14px;margin-bottom:8px;transition:border-color .15s}
-.alert:hover{border-color:#484f58}
-.alert.info{border-left-color:#58a6ff}.alert.warn{border-left-color:#d29922}.alert.urgent{border-left-color:#f85149}
-.alert .head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
-.alert .stock{font-weight:600;color:#ffd966;font-size:13px}
-.alert .time{color:#6e7681;font-size:11px;font-family:ui-monospace,monospace}
-.alert .badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase}
-.alert.info .badge{background:#0d1a2a;color:#58a6ff;border:1px solid #1f6feb44}
-.alert.warn .badge{background:#2a1f0a;color:#d29922;border:1px solid #d2992244}
-.alert.urgent .badge{background:#2a0d0d;color:#f85149;border:1px solid #f8514944}
-.alert .title{color:#f0f6fc;font-size:14px;margin:4px 0}
-.alert .pup-note{color:#c9a3ff;font-size:12px;margin-top:4px;font-style:italic}
-.alert a{color:#58a6ff;font-size:12px}
-.empty{color:#6e7681;text-align:center;padding:40px;font-size:14px;background:#161b22;border-radius:8px;border:1px dashed #30363d}
-footer{color:#6e7681;font-size:11px;text-align:center;margin-top:28px;padding-top:16px;border-top:1px solid #21262d}
-footer a{color:#8b949e;margin:0 8px}
-footer .sign{color:#a371f7;font-size:12px;margin-bottom:6px;display:block}
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px;color:#f85149}
+.sub{color:#8b949e;font-size:13px;margin-bottom:8px}
+.nav{margin-bottom:16px}
+.nav a{color:#58a6ff;font-size:13px;text-decoration:none;margin-right:12px}
+.alert{background:#161b22;border-left:3px solid #f85149;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.alert .stock{font-weight:600;color:#ffd966;font-size:14px}
+.alert .time{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;margin-left:8px}
+.alert .title{color:#f0f6fc;font-size:15px;margin:6px 0}
+.alert a{color:#58a6ff;font-size:12px;text-decoration:none}
+.empty{color:#6e7681;text-align:center;padding:40px;font-size:14px;background:#161b22;border-radius:8px}
+footer{color:#6e7681;font-size:11px;text-align:center;margin-top:24px}
 </style></head><body><div class="wrap">
 
-<<<<<<< Updated upstream
 <h1>🚨 Disclosure Alerts</h1>
-<div class='sub'>마지막 체크: 2026-04-18 20:10 KST · 1시간마다 자동 새로고침 · 신규 2건</div>
+<div class='sub'>마지막 체크: 2026-04-23 18:13 KST · 1시간마다 자동 새로고침 · 신규 0건</div>
 <div class='nav'><a href='index.html'>← 일일 브리핑</a></div>
 <!--ALERT_START-->
-<div class='alert'><div><span class='stock'>삼성전자 [005930]</span><span class='time'>2026-04-17 · NEW</span></div><div class='title'>주식등의대량보유상황보고서(일반)</div><a href='https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000682' target='_blank'>DART 원문 →</a></div>
-<div class='alert'><div><span class='stock'>삼성전자 [005930]</span><span class='time'>2026-04-17 · NEW</span></div><div class='title'>임원ㆍ주요주주특정증권등소유상황보고서</div><a href='https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260417000440' target='_blank'>DART 원문 →</a></div>
-<div class='empty'>신규 공시 없음</div>
 <!--ALERT_END-->
-<footer>Generated at 2026-04-18 07:57 KST — Source: DART OpenAPI</footer>
-=======
-<section class="hero" id="hero">
-  <h1>🚨 멍뭉이가 물어온 공시 알림</h1>
-  <div class="date">2026-04-23 16:17 KST · 16:00 슬롯 (장마감 후 실적·결산 커버)</div>
-  <div class="stats">
-    <div class="stat"><div class="lbl">🚨 긴급</div><div class="val urgent">0</div></div>
-    <div class="stat"><div class="lbl">⚠️ 주의</div><div class="val warn">0</div></div>
-    <div class="stat"><div class="lbl">ℹ️ 일반</div><div class="val info">0</div></div>
-  </div>
-</section>
-
-<div class="chips">
-  <a href="#urgent">🚨 긴급 0</a>
-  <a href="#warn">⚠️ 주의 0</a>
-  <a href="#info">ℹ️ 일반 0</a>
-  <a href="#all">전체 0</a>
-</div>
-
-<div class="regen">
-  <a href="https://claude.ai/code/scheduled/trig_014Yz3aiz6WmKcT637L7pyQc" target="_blank">🔄 재실행</a>
-  <div class="hint">공시가 안 보이면 재실행하거나 <a href="https://dart.fss.or.kr/" target="_blank" rel="noopener">DART</a>에서 직접 확인하세요.</div>
-</div>
-
-<div class="pup-intro">
-  <div class="face">🐶</div>
-  <div class="msg">오늘 <b>16:00 슬롯</b> 점검이에요! 장마감(15:30) 이후 실적·결산 공시를 찾으러 갔는데... <b>DART 아저씨가 스크래핑을 전부 막았어요 😢</b> curl도 403, 파이썬도 403... 멍뭉이 힘 쭉 뺐어요. 수동으로 DART 확인 부탁드려요! 멍!</div>
-</div>
-
-<div id="all">
-<!--ALERT_START-->
-
-<!--ALERT_END-->
-<div class='empty' id='all'>최근 2일 내 신규 공시 없음</div>
-</div>
-
-<footer>
-  <span class="sign">🐾 멍뭉이 DART 봇</span>
-  Generated: 2026-04-23 16:17 KST · 다음 점검: 내일 08:00 KST<br>
-  <a href="index.html">← 일일 브리핑</a>
-  <a href="https://dart.fss.or.kr/" target="_blank" rel="noopener">DART →</a>
-</footer>
->>>>>>> Stashed changes
+<div class='empty'>최근 2일 내 신규 공시 없음</div>
+<footer>Generated at 2026-04-23 18:13 KST — Source: dart.fss.or.kr</footer>
 </div></body></html>
