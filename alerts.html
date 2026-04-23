@@ -1,29 +1,48 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8">
+<html lang="ko"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="3600">
-<title>🚨 Disclosure Alerts</title>
+<title>🚨 멍뭉이 공시 알림</title>
+<link rel="stylesheet" href="styles.css">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;line-height:1.6}
-.wrap{max-width:720px;margin:0 auto;padding:24px 16px}
-h1{font-size:22px;margin:0 0 4px;color:#f85149}
-.sub{color:#8b949e;font-size:13px;margin-bottom:8px}
-.nav{margin-bottom:16px}
-.nav a{color:#58a6ff;font-size:13px;text-decoration:none;margin-right:12px}
-.alert{background:#161b22;border-left:3px solid #f85149;border-radius:8px;padding:14px 16px;margin-bottom:10px}
-.alert .stock{font-weight:600;color:#ffd966;font-size:14px}
-.alert .time{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;margin-left:8px}
-.alert .title{color:#f0f6fc;font-size:15px;margin:6px 0}
-.alert a{color:#58a6ff;font-size:12px;text-decoration:none}
-.empty{color:#6e7681;text-align:center;padding:40px;font-size:14px;background:#161b22;border-radius:8px}
-footer{color:#6e7681;font-size:11px;text-align:center;margin-top:24px}
-</style></head><body><div class="wrap">
+.empty{color:#6e7681;text-align:center;padding:48px 24px;font-size:15px;background:#161b22;border:1px solid #30363d;border-radius:12px;margin-top:8px}
+.hero-alerts{background:linear-gradient(135deg,#2a0d0d 0%,#1a0a0a 60%,#0d1117 100%);border:1px solid #f8514933;border-radius:16px;padding:22px 20px 18px;margin-bottom:14px}
+.hero-alerts h1{font-size:22px;margin:0 0 4px;color:#f85149;font-weight:700}
+.hero-alerts .sub{color:#8b949e;font-size:13px;margin-bottom:8px}
+.hero-alerts .dist{display:flex;gap:12px;font-size:12px;margin-top:8px}
+.hero-alerts .dist span{padding:3px 10px;border-radius:99px;font-weight:600}
+.d-urgent{background:#2a0d0d;color:#f85149;border:1px solid #f8514944}
+.d-warn{background:#2a1f0a;color:#d29922;border:1px solid #d2992244}
+.d-info{background:#0d1a2a;color:#58a6ff;border:1px solid #1f6feb44}
+</style>
+</head><body><div class="wrap">
 
-<h1>🚨 Disclosure Alerts</h1>
-<div class='sub'>마지막 체크: 2026-04-23 20:43 KST · 1시간마다 자동 새로고침 · 신규 0건</div>
-<div class='nav'><a href='index.html'>← 일일 브리핑</a></div>
-<!--ALERT_START-->
-<!--ALERT_END-->
-<div class='empty'>최근 2일 내 신규 공시 없음</div>
-<footer>Generated at 2026-04-23 20:43 KST — Source: dart.fss.or.kr</footer>
+<div class="hero-alerts">
+  <h1>🚨 멍뭉이가 물어온 공시 알림</h1>
+  <div class="sub">2026-04-24 08:14 KST · 총 0건 · 신규 0건</div>
+  <div class="dist">
+    <span class="d-urgent">🚨 urgent 0</span>
+    <span class="d-warn">⚠️ warn 0</span>
+    <span class="d-info">ℹ️ info 0</span>
+  </div>
+</div>
+
+<nav class="chips">
+  <a href="index.html">← 브리핑</a>
+  <a href="#all">📋 전체 (0)</a>
+  <a href="#urgent">🚨 urgent (0)</a>
+  <a href="#warn">⚠️ warn (0)</a>
+  <a href="#info">ℹ️ info (0)</a>
+</nav>
+
+
+<div class="empty" id="all">🐾 오늘은 공시를 못 찾았어요. 다음 점검에 또 올게요!</div>
+
+<footer>
+  <span class="sign">🐾 멍뭉이 DART 공시 점검봇</span>
+  다음 점검: 오늘 15:00 KST · <a href="https://dart.fss.or.kr" target="_blank" rel="noopener">dart.fss.or.kr</a>
+  <br>Generated at 2026-04-24 08:14 KST
+</footer>
+
 </div></body></html>
