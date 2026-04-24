@@ -17,7 +17,7 @@ a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
 .alloc .legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:8px;font-size:11px;color:#8b949e}
 .alloc .legend span{display:inline-flex;align-items:center;gap:5px}
 .alloc .legend i{display:inline-block;width:9px;height:9px;border-radius:2px}
-.c-samsung{background:#1f6feb}.c-doosan{background:#ff9f40}.c-taegwang{background:#d29922}.c-sanil{background:#a371f7}.c-gst{background:#3fb950}
+.c-samsung{background:#1f6feb}.c-doosan{background:#ff9f40}.c-taegwang{background:#d29922}.c-sanil{background:#a371f7}.c-samsungsdi{background:#00d9c9}.c-gst{background:#3fb950}
 .pup-intro{background:linear-gradient(135deg,#2a1f3a 0%,#161b22 100%);border:1px solid #a371f766;border-radius:12px;padding:14px 16px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-start}
 .pup-intro .face{font-size:32px;line-height:1;flex-shrink:0;margin-top:2px}
 .pup-intro .msg{color:#f0f6fc;font-size:14px;line-height:1.6}
@@ -44,7 +44,11 @@ h3.section .count{display:inline-block;min-width:20px;text-align:center;padding:
 .card.stock.doosan{border-left-color:#ff9f40}
 .card.stock.taegwang{border-left-color:#d29922}
 .card.stock.sanil{border-left-color:#a371f7}
+.card.stock.samsungsdi{border-left-color:#00d9c9}
 .card.stock.gst{border-left-color:#3fb950}
+.new-badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:0.4px;background:#0a2a2a;color:#00d9c9;border:1px solid #00d9c966;text-transform:uppercase;margin-left:4px}
+.watch-new{background:#0a2a2a55;border-left:3px solid #00d9c9;color:#f0f6fc;padding:10px 13px;margin-top:10px;border-radius:6px;font-size:13.5px;line-height:1.6}
+.watch-new b{color:#7aeadf}
 ul{margin:6px 0;padding-left:19px}li{margin:5px 0;font-size:14px}
 .up{color:#f85149;font-weight:600}.down{color:#3fb950;font-weight:600}.flat{color:#8b949e}
 .ptable{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0 12px}
