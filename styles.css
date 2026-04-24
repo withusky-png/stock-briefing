@@ -83,3 +83,90 @@ ul{margin:6px 0;padding-left:19px}li{margin:5px 0;font-size:14px}
 footer{color:#6e7681;font-size:11px;text-align:center;margin-top:28px;padding-top:16px;border-top:1px solid #21262d}
 footer a{color:#8b949e;margin:0 8px}
 footer .sign{color:#a371f7;font-size:12px;margin-bottom:6px;display:block}
+/* ===== 2026-04-24 브리핑 추가 스타일 ===== */
+.stats-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.stat-item{background:#0d111766;border:1px solid #30363d66;border-radius:8px;padding:8px 12px;flex:1;min-width:100px}
+.stat-label{display:block;color:#8b949e;font-size:10px;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:2px}
+.stat-value{display:block;font-size:14px;font-weight:700;font-family:ui-monospace,SFMono-Regular,monospace;color:#f0f6fc}
+.stat-value.up{color:#f85149}.stat-value.down{color:#3fb950}
+.alloc-bar{display:flex;height:10px;border-radius:6px;overflow:hidden;border:1px solid #30363d;margin-bottom:16px}
+.alloc-seg{display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;font-weight:700;white-space:nowrap;overflow:hidden;transition:opacity .15s}
+.alloc-seg:hover{opacity:.8}
+.pup-intro{background:linear-gradient(135deg,#2a1f3a 0%,#161b22 100%);border:1px solid #a371f766;border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.pup-intro p{margin:0 0 8px;font-size:14px;line-height:1.6;color:#f0f6fc}.pup-intro p:last-child{margin:0}
+.chip-nav{position:sticky;top:0;z-index:5;background:#0d1117ee;backdrop-filter:blur(6px);margin:0 -16px 16px;padding:8px 16px;border-bottom:1px solid #21262d;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.chip-nav::-webkit-scrollbar{display:none}
+.chip{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12px;background:#161b22;border:1px solid #30363d;color:#c9d1d9;white-space:nowrap;font-weight:500}
+.chip:hover{background:#21262d;text-decoration:none;border-color:#484f58}
+.section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.section h2{font-size:17px;margin:0 0 14px;color:#f0f6fc;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700}
+.as-of{color:#6e7681;font-size:11px;font-weight:400;font-family:ui-monospace,monospace;margin-left:auto}
+.sub-title{font-size:12px;color:#8b949e;margin:16px 0 8px;letter-spacing:0.6px;text-transform:uppercase;font-weight:700}
+.alert-list{display:flex;flex-direction:column;gap:8px}
+.alert-item{padding:10px 14px;border-radius:8px;font-size:13.5px;line-height:1.6;border-left:3px solid #30363d;background:#0d1117}
+.alert-item.info{border-left-color:#58a6ff;background:#0d1a2a55}
+.alert-item.warn{border-left-color:#d29922;background:#2a1f0a33}
+.alert-item.danger{border-left-color:#f85149;background:#2a0d0d33}
+.alert-tag{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:700;background:#21262d;color:#c9d1d9;margin-right:6px;border:1px solid #30363d}
+.market-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:10px}
+.market-card{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:10px 12px;text-align:center}
+.market-name{font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:600}
+.market-close{font-size:16px;font-weight:700;font-family:ui-monospace,monospace;color:#f0f6fc;margin-bottom:2px}
+.market-chg{font-size:12px;font-weight:600;font-family:ui-monospace,monospace}
+.sector-grid{display:flex;flex-direction:column;gap:6px}
+.sector-item{display:flex;justify-content:space-between;align-items:center;background:#0d1117;border:1px solid #21262d;border-radius:6px;padding:8px 12px}
+.sector-name{font-size:13px;color:#c9d1d9}
+.sector-val{font-size:13px;font-weight:600;font-family:ui-monospace,monospace}
+.watch-grid{display:flex;flex-direction:column;gap:10px}
+.watch-card{background:#0d1117;border:1px solid #21262d;border-radius:10px;padding:14px 16px}
+.watch-theme{font-size:14px;font-weight:700;color:#f0f6fc;margin-bottom:6px}
+.watch-body{font-size:13.5px;color:#c9d1d9;line-height:1.6;margin-bottom:6px}
+.watch-sentiment{font-size:12px;font-family:ui-monospace,monospace;padding:3px 8px;border-radius:4px;display:inline-block;border:1px solid #30363d;background:#161b22}
+.watch-sentiment.up{color:#f85149;border-color:#f8514944}.watch-sentiment.flat{color:#8b949e}.watch-sentiment.down{color:#3fb950;border-color:#3fb95044}
+.risk-list{display:flex;flex-direction:column;gap:10px}
+.risk-item{padding:12px 16px;border-radius:8px;border-left:4px solid #30363d;background:#0d1117}
+.risk-item.high{border-left-color:#f85149;background:#2a0d0d22}
+.risk-item.mid{border-left-color:#d29922;background:#2a1f0a22}
+.risk-item.low{border-left-color:#3fb950;background:#0d2a1a22}
+.risk-title{font-size:14px;font-weight:700;color:#f0f6fc;margin-bottom:4px}
+.risk-desc{font-size:13px;color:#c9d1d9;line-height:1.6}
+.trump-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.trump-card{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px 14px}
+.trump-card.danger{border-color:#f8514944;background:#2a0d0d22}
+.trump-card.warn{border-color:#d2992244;background:#2a1f0a22}
+.trump-card.info{border-color:#1f6feb44;background:#0d1a2a22}
+.trump-title{font-size:13.5px;font-weight:700;color:#f0f6fc;margin-bottom:6px}
+.trump-body{font-size:13px;color:#c9d1d9;line-height:1.6}
+.port-grid{display:flex;flex-direction:column;gap:12px}
+.port-card{background:#0d1117;border:1px solid #30363d;border-radius:12px;padding:16px 18px;border-left:4px solid #30363d;transition:border-color .15s}
+.port-card.pup{border-left-color:#a371f7}
+.port-card.watch{border-left-color:#d29922}
+.port-card.new{border-left-color:#00d9c9;background:linear-gradient(135deg,#0a2a2a 0%,#0d1117 100%)}
+.port-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.port-name{font-size:17px;font-weight:700;color:#f0f6fc}
+.port-code{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;background:#161b22;padding:1px 6px;border-radius:4px;border:1px solid #21262d}
+.port-alloc{margin-left:auto;color:#8b949e;font-size:12px;font-weight:600}
+.port-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:0.3px}
+.badge-hormuz{background:#2a1f0a;color:#d29922;border:1px solid #d2992266}
+.badge-new{background:#0a2a2a;color:#00d9c9;border:1px solid #00d9c966}
+.port-price{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.port-close{font-size:22px;font-weight:700;font-family:ui-monospace,monospace;color:#f0f6fc}
+.port-chg{font-size:14px;font-weight:700;font-family:ui-monospace,monospace}
+.port-detail{display:flex;justify-content:space-between;font-size:12px;color:#8b949e;margin-bottom:6px;font-family:ui-monospace,monospace}
+.port-profit{font-weight:600}
+.port-vol{font-size:11px;color:#6e7681;margin-bottom:8px;font-family:ui-monospace,monospace}
+.port-target{font-size:13px;background:#0d2a1a;border:1px solid #3fb95044;border-radius:6px;padding:6px 10px;margin-bottom:8px;color:#c9d1d9}
+.port-flow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;font-size:12px}
+.flow-item{background:#161b22;border:1px solid #21262d;border-radius:4px;padding:3px 8px;color:#c9d1d9;font-family:ui-monospace,monospace}
+.port-note{font-size:12.5px;color:#8b949e;margin-bottom:8px;line-height:1.5}
+.port-news{background:#1a1a2a;border:1px solid #2a2a4a;border-radius:6px;padding:8px 10px;font-size:12.5px;color:#c9d1d9;display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap;line-height:1.5}
+.port-news em{font-style:italic;color:#b0b8c4;flex:1}
+.sentiment-up{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;background:#3a0d0d;color:#f85149;border:1px solid #f8514966;white-space:nowrap}
+.sentiment-down{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;background:#0d2a1a;color:#3fb950;border:1px solid #3fb95066;white-space:nowrap}
+.footer{color:#6e7681;font-size:11px;text-align:center;margin-top:28px;padding-top:16px;border-top:1px solid #21262d}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.seg-samsung{width:44.4%;background:#1f6feb}
+.seg-doosan{width:30.3%;background:#388bfd}
+.seg-taegwang{width:12.5%;background:#58a6ff}
+.seg-sanil{width:11.3%;background:#79c0ff}
+.seg-sdi{width:1.6%;background:#cae8ff}
