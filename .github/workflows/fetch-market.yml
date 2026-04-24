@@ -1,0 +1,40 @@
+name: Fetch Market Data
+
+on:
+  schedule:
+    - cron: '50 23 * * 0-4'  # 08:50 KST (월~금) — 브리핑 10분 전 준비
+    - cron: '50 5  * * 0-4'  # 14:50 KST (월~금) — 장중 업데이트
+    - cron: '10 7  * * 0-4'  # 16:10 KST (월~금) — 종가 직후
+  workflow_dispatch:           # 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-market
+  cancel-in-progress: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install -q yfinance requests
+
+      - name: Fetch market data
+        run: python3 scripts/fetch_market.py
+
+      - name: Commit & push
+        run: |
+          git config user.name  'Market Bot'
+          git config user.email 'market@withusky.local'
+          git add market_data.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            KOSPI=$(python3 -c "import json; d=json.load(open('market_data.json')); print(d['index'].get('KOSPI',{}).get('close','?'))" 2>/dev/null || echo '?')
+            git commit -m "market: $(TZ=Asia/Seoul date +'%H:%M KST') KOSPI=${KOSPI}"
+            git push
+          fi
