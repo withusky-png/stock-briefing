@@ -1,74 +1,29 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🚨 멍뭉이 공시 알림</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #0f0f23; color: #e0e0e0; margin: 0; padding: 0; }
-    .hero { background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%); padding: 2rem; text-align: center; border-bottom: 2px solid #7c3aed; }
-    .hero h1 { font-size: 1.8rem; margin: 0 0 0.5rem; color: #fff; }
-    .hero .ts { color: #a78bfa; font-size: 0.9rem; }
-    .severity-dist { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
-    .dist-item { background: rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem; }
-    .chip-nav { position: sticky; top: 0; z-index: 10; background: #1a1a2e; padding: 0.8rem 1rem; display: flex; gap: 0.6rem; overflow-x: auto; border-bottom: 1px solid #333; }
-    .chip { padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.82rem; text-decoration: none; border: 1px solid #444; color: #ccc; white-space: nowrap; }
-    .chip:hover { background: #7c3aed; color: #fff; border-color: #7c3aed; }
-    .cards { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; display: flex; flex-direction: column; gap: 1rem; }
-    .card { background: #1e1e3f; border-radius: 12px; padding: 1.2rem; border-left: 4px solid #555; }
-    .card-urgent { border-left-color: #ef4444; }
-    .card-warn { border-left-color: #f59e0b; }
-    .card-info { border-left-color: #3b82f6; }
-    .card-empty { border-left-color: #555; text-align: center; padding: 2rem; }
-    .card-header { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-    .stock-name { font-weight: 700; color: #fff; }
-    .stock-code { color: #888; font-size: 0.85rem; }
-    .badge { padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
-    .badge-urgent { background: #7f1d1d; color: #fca5a5; }
-    .badge-warn { background: #78350f; color: #fcd34d; }
-    .badge-info { background: #1e3a5f; color: #93c5fd; }
-    .received { margin-left: auto; color: #888; font-size: 0.82rem; }
-    .card-title { margin: 0.5rem 0; font-size: 1rem; }
-    .card-title a { color: #93c5fd; text-decoration: none; }
-    .card-title a:hover { text-decoration: underline; }
-    .pup-note { margin-top: 0.6rem; color: #c4b5fd; font-size: 0.88rem; border-top: 1px solid #333; padding-top: 0.5rem; }
-    .empty-state { color: #888; }
-    .pup-icon { font-size: 3rem; margin-bottom: 0.5rem; }
-    footer { text-align: center; padding: 2rem; color: #555; font-size: 0.85rem; border-top: 1px solid #222; }
-  </style>
-</head>
-<body>
-  <div class="hero">
-    <h1>🚨 멍뭉이가 물어온 공시 알림</h1>
-    <div class="ts">2026-04-27 16:08 KST</div>
-    <div class="severity-dist">
-      <span class="dist-item">🚨 긴급 0건</span>
-      <span class="dist-item">⚠️ 주의 0건</span>
-      <span class="dist-item">ℹ️ 정보 0건</span>
-    </div>
-  </div>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="3600">
+<title>🚨 Disclosure Alerts</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px}
+h1{font-size:22px;margin:0 0 4px;color:#f85149}
+.sub{color:#8b949e;font-size:13px;margin-bottom:8px}
+.nav{margin-bottom:16px}
+.nav a{color:#58a6ff;font-size:13px;text-decoration:none;margin-right:12px}
+.alert{background:#161b22;border-left:3px solid #f85149;border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.alert .stock{font-weight:600;color:#ffd966;font-size:14px}
+.alert .time{color:#6e7681;font-size:12px;font-family:ui-monospace,monospace;margin-left:8px}
+.alert .title{color:#f0f6fc;font-size:15px;margin:6px 0}
+.alert a{color:#58a6ff;font-size:12px;text-decoration:none}
+.empty{color:#6e7681;text-align:center;padding:40px;font-size:14px;background:#161b22;border-radius:8px}
+footer{color:#6e7681;font-size:11px;text-align:center;margin-top:24px}
+</style></head><body><div class="wrap">
 
-  <nav class="chip-nav">
-    <a href="#urgent" class="chip">🚨 긴급 (0)</a>
-    <a href="#warn" class="chip">⚠️ 주의 (0)</a>
-    <a href="#info" class="chip">ℹ️ 정보 (0)</a>
-    <a href="#all" class="chip">📋 전체 (0)</a>
-  </nav>
-
-  <div class="cards" id="all">
-    <div class="card card-empty">
-      <div class="empty-state">
-        <div class="pup-icon">🐾</div>
-        <p>오늘은 공시를 못 찾았어요. 다음 점검에 또 올게요!</p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    다음 점검: 내일 08:00 KST &nbsp;|&nbsp;
-    보유 종목: 삼성전자·두산에너빌리티·태광·산일전기·GST &nbsp;|&nbsp;
-    🐾 멍뭉이 DART 봇
-  </footer>
-</body>
-</html>
+<h1>🚨 Disclosure Alerts</h1>
+<div class='sub'>마지막 체크: 2026-04-27 16:57 KST · 1시간마다 자동 새로고침 · 신규 0건</div>
+<div class='nav'><a href='index.html'>← 일일 브리핑</a></div>
+<!--ALERT_START-->
+<!--ALERT_END-->
+<div class='empty'>최근 2일 내 신규 공시 없음</div>
+<footer>Generated at 2026-04-27 16:57 KST — Source: dart.fss.or.kr</footer>
+</div></body></html>
