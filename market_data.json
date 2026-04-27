@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-27T21:02:06.052429",
+  "generated": "2026-04-27T21:13:02.116241",
   "date": "2026-04-27",
   "stocks": {
     "005930": {
@@ -74,6 +74,11 @@
     }
   },
   "index": {
+    "KOSPI": {
+      "close": 6615.03,
+      "change_pct": 2.15,
+      "as_of": "2026-04-27"
+    },
     "KOSDAQ": {
       "close": 1226.18,
       "change_pct": 1.86,
@@ -83,26 +88,21 @@
       "close": 995.33,
       "change_pct": 2.41,
       "as_of": "2026-04-27"
-    },
-    "KOSPI": {
-      "close": 6615.03,
-      "change_pct": 2.15,
-      "as_of": "2026-04-27"
     }
   },
   "fx": {
     "USDKRW": {
-      "close": 1470.97,
+      "close": 1470.89,
       "change_pct": -0.61,
       "as_of": "2026-04-27"
     },
     "WTI": {
-      "close": 95.04,
-      "change_pct": 0.68,
+      "close": 95.06,
+      "change_pct": 0.7,
       "as_of": "2026-04-27"
     }
   },
   "sector": {},
   "source": "yfinance (GitHub Actions)",
-  "elapsed": 1.41
+  "elapsed": 1.95
 }
